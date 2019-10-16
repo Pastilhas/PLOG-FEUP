@@ -6,4 +6,6 @@
 /* Start game
     mbrane/0
     mbrane */
-mbrane:-main_menu
+mbrane:-
+    main_menu,
+    .

@@ -11,12 +11,12 @@ main_menu:-
     write('|    2) Instructions                       |'), nl,
     write('|    3) Quit                               |'), nl,
     write('|                                          |'), nl,
-    write('|    ?- '),
+    write('     ?- '),
     get_option(OP),
-    write('+------------------------------------------+').
+    clear.
 
 
-/* Clear screen for better board display 
+/* Clear screen for better board display
 	clear/0
 	clear */
 clear:- write('\e[2J').
