@@ -10,8 +10,13 @@
     mbrane */
 mbrane:-
     main_menu(OP),
-    (OP = '1' -> game, mbrane;
-     OP = '2' -> instructions_menu, mbrane;
-     OP = '3' -> about_menu, mbrane;
-     OP = '4';
-    mbrane).
+    (OP == '0' -> game, mbrane;
+     OP == '1' -> instructions_menu, mbrane;
+     OP == '2' -> about_menu, mbrane).
+
+
+display_game(Board,Player):-
+    /* temporary board(Board) */
+    board(Board),
+    game_ui(Player),
+    display_board(Board).
