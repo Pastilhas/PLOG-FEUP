@@ -1,3 +1,7 @@
+:- dynamic(board/1).
+:- dynamic(board_blocks/1).
+:- dynamic(board_influence/1).
+
 board([
 	[' ',' ',' ',' ',' ',' ',' ',' ',' '],
 	[' ',' ',' ',' ',' ',' ',' ',' ',' '],
@@ -23,9 +27,15 @@ board_blocks([
 board_influence([0,0,0,0,0,0,0,0,0]).
 
 destroy_board(BL,BB,BI):-
+<<<<<<< HEAD
 	board(BL),				retract(board(BL)),
 	board_blocks(BB),		retract(board_blocks(BB)),
 	board_influence(BI),	retract(board_influence(BI)).
+=======
+	board(BL),retract(board(BL)),
+	board_blocks(BB),retract(board_blocks(BB)),
+	board_influence(BI),retract(board_influence(BI)).
+>>>>>>> 2ea13b336cc4bada5b44a6f848431a74096551cc
 
 save_board(BL,BC,BB):-
 	assertz(board(BL)),
@@ -67,27 +77,41 @@ update_power(B,V):-
 	nth0(B,Board,V).
 
 update_influence(B,N,V):-
-	(	(V == 0) -> false;
-		(N == 4) -> false;
-		(B == N) -> false;
-		(B == 0,(N == 1; N == 3)) -> false;
-		(B == 2,(N == 1; N == 5)) -> false;
-		(B == 6,(N == 3; N == 7)) -> false;
-		(B == 8,(N == 5; N == 7)) -> false;
+	(	V = 0, !, false;
+		N = 4, !, false;
+		B = N, !, false;
+		B = 0, (N = 1; N = 3), !, false;
+		B = 2, (N = 1; N = 5), !, false;
+		B = 6, (N = 3; N = 7), !, false;
+		B = 8, (N = 5; N = 7), !, false;
 		true),
 	INF is div(V,2),
-	(	(N == 0) -> (B_UP is B-3,B_LF is B-1,update_power(B_UP,INF),update_power(B_LF,INF));
-		(N == 2) -> (B_UP is B-3,B_RT is B+1,update_power(B_UP,INF),update_power(B_RT,INF));
-		(N == 6) -> (B_DN is B+3,B_LF is B+1,update_power(B_DN,INF),update_power(B_LF,INF));
-		(N == 8) -> (B_DN is B+3,B_RT is B+1,update_power(B_DN,INF),update_power(B_RT,INF));
+	(	N = 0, !, (B_UP is B-3,B_LF is B-1,update_power(B_UP,INF),update_power(B_LF,INF));
+		N = 2, !, (B_UP is B-3,B_RT is B+1,update_power(B_UP,INF),update_power(B_RT,INF));
+		N = 6, !, (B_DN is B+3,B_LF is B+1,update_power(B_DN,INF),update_power(B_LF,INF));
+		N = 8, !, (B_DN is B+3,B_RT is B+1,update_power(B_DN,INF),update_power(B_RT,INF));
 
-		(N == 1) -> (B_UP is B-3,update_power(B_UP,INF));
-		(N == 3) -> (B_LF is B-1,update_power(B_LF,INF));
-		(N == 5) -> (B_RT is B+1,update_power(B_RT,INF));
-		(N == 7) -> (B_DN is B+3,update_power(B_DN,INF));
+		N = 1, !, (B_UP is B-3,update_power(B_UP,INF));
+		N = 3, !, (B_LF is B-1,update_power(B_LF,INF));
+		N = 5, !, (B_RT is B+1,update_power(B_RT,INF));
+		N = 7, !, (B_DN is B+3,update_power(B_DN,INF));
 		true).
 
+<<<<<<< HEAD
 place_piece(X,Y,V,BL,BB,BI)	:-
 	place_piece_board(X,Y,V,BL),
 	place_piece_blocks(X,Y,V,BB),
 	place_piece_influence(X,Y,V,BI),
+=======
+get_player(Payer) :- 
+	write('Player name'), nl,
+	write('     ?- '),
+	read(Player),
+	clear.
+
+game :- 
+	get_player(Player),
+	destroy_board(BL,BB,BI),
+	write(Player),
+	display_game(BL,Player).
+>>>>>>> 2ea13b336cc4bada5b44a6f848431a74096551cc
