@@ -27,15 +27,9 @@ board_blocks([
 board_influence([0,0,0,0,0,0,0,0,0]).
 
 destroy_board(BL,BB,BI):-
-<<<<<<< HEAD
 	board(BL),				retract(board(BL)),
 	board_blocks(BB),		retract(board_blocks(BB)),
 	board_influence(BI),	retract(board_influence(BI)).
-=======
-	board(BL),retract(board(BL)),
-	board_blocks(BB),retract(board_blocks(BB)),
-	board_influence(BI),retract(board_influence(BI)).
->>>>>>> 2ea13b336cc4bada5b44a6f848431a74096551cc
 
 save_board(BL,BC,BB):-
 	assertz(board(BL)),
@@ -97,21 +91,21 @@ update_influence(B,N,V):-
 		N = 7, !, (B_DN is B+3,update_power(B_DN,INF));
 		true).
 
-<<<<<<< HEAD
-place_piece(X,Y,V,BL,BB,BI)	:-
-	place_piece_board(X,Y,V,BL),
-	place_piece_blocks(X,Y,V,BB),
-	place_piece_influence(X,Y,V,BI),
-=======
-get_player(Payer) :- 
+
+get_player(Payer) :-
 	write('Player name'), nl,
 	write('     ?- '),
 	read(Player),
 	clear.
 
-game :- 
+game :-
 	get_player(Player),
 	destroy_board(BL,BB,BI),
 	write(Player),
 	display_game(BL,Player).
->>>>>>> 2ea13b336cc4bada5b44a6f848431a74096551cc
+
+place_piece(X,Y,V,BL,BB,BI)	:-
+	place_piece_board(X,Y,V,BL),
+	place_piece_blocks(X,Y,V,BB),
+	place_piece_influence(X,Y,V,BI).
+
