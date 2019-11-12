@@ -99,15 +99,3 @@ update_influence(B,N,V):-
 		N = 5, !, (B_RT is B+1,update_power(B_RT,INF));
 		N = 7, !, (B_DN is B+3,update_power(B_DN,INF));
 		true).
-
-get_player(Payer) :- 
-	write('Player name'), nl,
-	write('     ?- '),
-	read(Player),
-	clear.
-
-game :- 
-	get_player(Player),
-	destroy_board(BL,BB,BI),
-	write(Player),
-	display_game(BL,Player).

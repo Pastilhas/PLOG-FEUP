@@ -14,6 +14,22 @@ main_menu(OP):-
     get_option(OP),
     clear.
 
+player_select(OP) :-
+    clear,
+    write('+------------------------------------------+'), nl,
+    write('|                                          |'), nl,
+    write('|             Select Game Mode             |'), nl,
+    write('|                                          |'), nl,
+    write('|    0) Player 1 vs Player 2               |'), nl,
+    write('|    1) Player 1 vs Bot                    |'), nl,
+    write('|    2) Bot vs Bot                         |'), nl,
+    write('|    3) Quit                               |'), nl,
+    write('|                                          |'), nl,
+    write('+------------------------------------------+'), nl,
+    write('     ?- '),
+    get_option(OP),
+    clear.
+
 instructions_menu:-
     clear,
     write('+------------------------------------------+'), nl,
@@ -48,10 +64,10 @@ about_menu:-
     wait_enter,
     clear.
 
-game_ui(Player):-
+game_ui(Player1,Player2):-
     clear,
-    format('~p~n',Player),
+    format('~s~n',[Player1]),
     format('                 ~p~n','VS'),
-    format('                                 ~p~n','Bot').
+    format('~t~s~37|~n',[Player2]).
 
 clear:- write('\e[2J').
