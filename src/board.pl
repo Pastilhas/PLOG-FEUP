@@ -31,14 +31,14 @@ board_influence([0,0,0,0,0,0,0,0,0]).
 
 % destroy_board
 % BL,BB,BI - return boards
-destroy_board(BL,BB,BI) :-
+destroy_board(BL,BB,BI):-
 	board(BL),				retract(board(BL)),
 	board_blocks(BB),		retract(board_blocks(BB)),
 	board_influence(BI),	retract(board_influence(BI)).
 
 % save_board
 % BL,BB,BI - boards to assert
-save_board(BL,BC,BB) :-
+save_board(BL,BC,BB):-
 	assertz(board(BL)),
 	assertz(board_blocks(BC)),
 	assertz(board_influence(BB)).
@@ -46,29 +46,30 @@ save_board(BL,BC,BB) :-
 % make_move
 % X,Y 	- coordinates
 % V		- value
-make_move(X,Y,V) :-
-	check_move(X,Y,V).
+make_move(X,Y,V,BL,BB,BI,RL,RB,RI):-
+	check_move(X,Y,V,BL),!,place_piece(X,Y,V,BL,BB,BI,RL,RB,RI);
+	(RL = BL,RB = BB,RI = BI).
 
 % check_move
 % X,Y 	- coordinates
 % V 	- value
-check_move(X,Y,V) :-
-	X >= 0,X =< 8,
-	Y >= 0,Y =< 8,
-	V >= 0,V =< 8,
-	board(Board),nth0(Y,Board,Line),nth0(X,Line,Elem),
-	Elem == ' '.
+check_move(X,Y,V,B):-
+	X > -1,X < 9,
+	Y > -1,Y < 9,
+	V > -1,V < 9,
+	nth0(Y,B,L),nth0(X,L,E),
+	E = ' '.
 
 % update_power
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!! BAD
-update_power(B,V) :-
+update_power(B,V):-
 	B >= 0,B=< 8,
 	board_influence(Board),
 	nth0(B,Board,V).
 
 % update_influence
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!! BAD
-update_influence(B,N,V) :-
+update_influence(B,N,V):-
 	(	V = 0,!,false;
 		N = 4,!,false;
 		B = N,!,false;
@@ -89,12 +90,12 @@ update_influence(B,N,V) :-
 		N = 7,!,(B_DN is B+3,update_power(B_DN,INF))
 	).
 
-place_piece(X,Y,V,BL,BB,BI,RL,RB,RI) :-
+place_piece(X,Y,V,BL,BB,BI,RL,RB,RI):-
 	place_piece_board(X,Y,V,BL,RL),
 	coords_to_blocks(X,Y,B,N),
 	place_piece_blocks(B,N,V,BB,RB),
 	place_piece_influence(B,V,BI,RI).
 
-place_piece_board(X,Y,V,BL,RL) :-  	replace_matrix(BL,X,Y,V,RL).
-place_piece_blocks(B,N,V,BB,RB) :- 	replace_matrix(BB,B,N,V,RB).
-place_piece_influence(B,V,BI,RI) :- replace(BI,B,V,RI).
+place_piece_board(X,Y,V,BL,RL):-  	replace_matrix(BL,X,Y,V,RL).
+place_piece_blocks(B,N,V,BB,RB):- 	replace_matrix(BB,B,N,V,RB).
+place_piece_influence(B,V,BI,RI):- replace(BI,B,V,RI).
