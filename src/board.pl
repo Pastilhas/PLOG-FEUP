@@ -23,14 +23,14 @@ board_blocks([
 board_influence([0,0,0,0,0,0,0,0,0]).
 
 destroy_board(BL,BB,BI):-
-	board(BL),retract(BL),
-	board_blocks(BB),retract(BB),
-	board_influence(BI),retract(BI).
+	board(BL),				retract(board(BL)),
+	board_blocks(BB),		retract(board_blocks(BB)),
+	board_influence(BI),	retract(board_influence(BI)).
 
 save_board(BL,BC,BB):-
-	assertz(BL),
-	assertz(BC),
-	assertz(BB).
+	assertz(board(BL)),
+	assertz(board_blocks(BC)),
+	assertz(board_influence(BB)).
 
 display_board(Board):-display_board(Board,0).
 display_board(Board,9):-write('+---+---+---+---+---+---+---+---+---+'),nl.
@@ -61,15 +61,6 @@ check_move(X,Y,V):-
 	board(Board),nth0(Y,Board,Line),nth0(X,Line,Elem),
 	Elem == '  '.
 
-place_piece(X,Y,V):-
-	board(Board),nth0(Y,Board,Line),nth0(X,Line,Elem),
-	Elem is V,
-	coords_to_block(X,Y,B,N),
-	board_blocks(Board_blk),nth0(B,Board_blk,Block),nth0(N,Block,Elem_blk),
-	Elem_blk is V,
-	update_power(B,V),
-	update_influence(B,N,V).
-
 update_power(B,V):-
 	B >= 0,B=< 8,
 	board_influence(Board),
@@ -96,3 +87,7 @@ update_influence(B,N,V):-
 		(N == 7) -> (B_DN is B+3,update_power(B_DN,INF));
 		true).
 
+place_piece(X,Y,V,BL,BB,BI)	:-
+	place_piece_board(X,Y,V,BL),
+	place_piece_blocks(X,Y,V,BB),
+	place_piece_influence(X,Y,V,BI),

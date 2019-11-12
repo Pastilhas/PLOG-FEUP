@@ -21,7 +21,7 @@ display_game(Board,Player):-
     game_ui(Player),
     display_board(Board).
 
-board1([
+board1( [
 	[' ',' ',' ',' ',' ',' ',' ',' ',' '],
 	[' ',' ',' ',' ',' ',' ',' ',' ',' '],
 	[' ',' ',' ',' ',' ',' ',' ',' ',' '],
