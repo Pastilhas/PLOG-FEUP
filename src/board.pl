@@ -76,23 +76,23 @@ update_power(B,V):-
 	nth0(B,Board,V).
 
 update_influence(B,N,V):-
-	(	(V == 0) -> false;
-		(N == 4) -> false;
-		(B == N) -> false;
-		(B == 0,(N == 1; N == 3)) -> false;
-		(B == 2,(N == 1; N == 5)) -> false;
-		(B == 6,(N == 3; N == 7)) -> false;
-		(B == 8,(N == 5; N == 7)) -> false;
+	(	V = 0, !, false;
+		N = 4, !, false;
+		B = N, !, false;
+		B = 0, (N = 1; N = 3), !, false;
+		B = 2, (N = 1; N = 5), !, false;
+		B = 6, (N = 3; N = 7), !, false;
+		B = 8, (N = 5; N = 7), !, false;
 		true),
 	INF is div(V,2),
-	(	(N == 0) -> (B_UP is B-3,B_LF is B-1,update_power(B_UP,INF),update_power(B_LF,INF));
-		(N == 2) -> (B_UP is B-3,B_RT is B+1,update_power(B_UP,INF),update_power(B_RT,INF));
-		(N == 6) -> (B_DN is B+3,B_LF is B+1,update_power(B_DN,INF),update_power(B_LF,INF));
-		(N == 8) -> (B_DN is B+3,B_RT is B+1,update_power(B_DN,INF),update_power(B_RT,INF));
+	(	N = 0, !, (B_UP is B-3,B_LF is B-1,update_power(B_UP,INF),update_power(B_LF,INF));
+		N = 2, !, (B_UP is B-3,B_RT is B+1,update_power(B_UP,INF),update_power(B_RT,INF));
+		N = 6, !, (B_DN is B+3,B_LF is B+1,update_power(B_DN,INF),update_power(B_LF,INF));
+		N = 8, !, (B_DN is B+3,B_RT is B+1,update_power(B_DN,INF),update_power(B_RT,INF));
 
-		(N == 1) -> (B_UP is B-3,update_power(B_UP,INF));
-		(N == 3) -> (B_LF is B-1,update_power(B_LF,INF));
-		(N == 5) -> (B_RT is B+1,update_power(B_RT,INF));
-		(N == 7) -> (B_DN is B+3,update_power(B_DN,INF));
+		N = 1, !, (B_UP is B-3,update_power(B_UP,INF));
+		N = 3, !, (B_LF is B-1,update_power(B_LF,INF));
+		N = 5, !, (B_RT is B+1,update_power(B_RT,INF));
+		N = 7, !, (B_DN is B+3,update_power(B_DN,INF));
 		true).
 

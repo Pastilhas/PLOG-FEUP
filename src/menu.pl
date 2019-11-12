@@ -42,7 +42,7 @@ about_menu:-
     write('|                                          |'), nl,
     write('|                                          |'), nl,
     write('|                                          |'), nl,
-    write('|                16/10/2018                |'), nl,
+    write('|                16/10/2019                |'), nl,
     write('|                                          |'), nl,
     write('+------------------------------------------+'), nl,
     wait_enter,
