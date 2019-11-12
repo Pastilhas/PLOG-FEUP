@@ -1,3 +1,7 @@
+:- dynamic(board/1).
+:- dynamic(board_blocks/1).
+:- dynamic(board_influence/1).
+
 board([
 	[' ',' ',' ',' ',' ',' ',' ',' ',' '],
 	[' ',' ',' ',' ',' ',' ',' ',' ',' '],
@@ -23,9 +27,9 @@ board_blocks([
 board_influence([0,0,0,0,0,0,0,0,0]).
 
 destroy_board(BL,BB,BI):-
-	board(BL),retract(BL),
-	board_blocks(BB),retract(BB),
-	board_influence(BI),retract(BI).
+	board(BL),retract(board(BL)),
+	board_blocks(BB),retract(board_blocks(BB)),
+	board_influence(BI),retract(board_influence(BI)).
 
 save_board(BL,BC,BB):-
 	assertz(BL),
@@ -96,3 +100,14 @@ update_influence(B,N,V):-
 		N = 7, !, (B_DN is B+3,update_power(B_DN,INF));
 		true).
 
+get_player(Payer) :- 
+	write('Player name'), nl,
+	write('     ?- '),
+	read(Player),
+	clear.
+
+game :- 
+	get_player(Player),
+	destroy_board(BL,BB,BI),
+	write(Player),
+	display_game(BL,Player).
