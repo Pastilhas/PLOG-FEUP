@@ -1,0 +1,27 @@
+\babel@toc {english}{}
+\contentsline {paragraph}{}{2}% 
+\contentsline {paragraph}{}{2}% 
+\contentsline {paragraph}{}{2}% 
+\contentsline {paragraph}{}{2}% 
+\contentsline {section}{\numberline {1}Introduction}{4}% 
+\contentsline {paragraph}{}{4}% 
+\contentsline {section}{\numberline {2}Game Presentation}{5}% 
+\contentsline {subsection}{\numberline {2.1}Origin}{5}% 
+\contentsline {paragraph}{}{5}% 
+\contentsline {paragraph}{}{5}% 
+\contentsline {paragraph}{}{5}% 
+\contentsline {subsection}{\numberline {2.2}Rules}{5}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Placement phase}{5}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Resolution Phase}{7}% 
+\contentsline {paragraph}{}{8}% 
+\contentsline {section}{\numberline {3}Game Logic}{9}% 
+\contentsline {subsection}{\numberline {3.1}Game state representation}{9}% 
+\contentsline {subsection}{\numberline {3.2}Board viewing}{9}% 
+\contentsline {subsection}{\numberline {3.3}List valid plays}{9}% 
+\contentsline {subsection}{\numberline {3.4}Play execution}{9}% 
+\contentsline {paragraph}{}{9}% 
+\contentsline {subsection}{\numberline {3.5}Game finalization}{9}% 
+\contentsline {paragraph}{}{9}% 
+\contentsline {subsection}{\numberline {3.6}Board evaluation}{10}% 
+\contentsline {subsection}{\numberline {3.7}Plays of the computer}{10}% 
+\contentsline {section}{\numberline {4}Conclusions}{11}% 

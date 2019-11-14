@@ -1,0 +1,249 @@
+\documentclass[a4paper]{article}
+
+%use the english line for english reports
+\usepackage[english]{babel}
+%\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{url}
+
+
+\begin{document}
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{22cm}
+
+\title{\Huge\textbf{Mbrane}\linebreak\linebreak\linebreak
+\Large\textbf{Final Report}\linebreak\linebreak
+\linebreak\linebreak
+\includegraphics[scale=0.1]{feup-logo.png}\linebreak\linebreak
+\linebreak\linebreak
+\Large{Logic Programing}\linebreak
+}
+
+\author{\textbf{Group Mbrane 4:}\\ Leonardo Fernandes Moura - 201706907@fe.up.pt \\ João Pedro Campos - up201704982@fe.up.pt \\\linebreak\linebreak \\
+ \\ Faculdade de Engenharia da Universidade do Porto \\ Rua Roberto Frias, s\/n, 4200-465 Porto, Portugal \linebreak\linebreak\linebreak
+\linebreak\linebreak\vspace{1cm}}
+\date{November 13, 2019}
+\maketitle
+\thispagestyle{empty}
+
+%************************************************************************************************
+%************************************************************************************************
+
+\newpage
+
+% TODO
+\section*{Summary}
+Resumo do trabalho (aprox. 250 palavras) descrevendo sucintamente o problema abordado, objetivos, metodologia usada na sua resolução, principais resultados e conclusões).
+
+\paragraph{} 
+The goal of this project was to program a board game using the prolog language. In our case the game in question is Mbrane, a 
+game created by DukeZhou based on Sudoku and strategy games like chess. Section 2 clarifies all the aspects of this game.
+
+\paragraph{}
+In terms of programing, the goal of the project was to efficiently implement all the game logic using Prolog.  This means we have to
+represent the core mechanics of the game using Prolog. The first step is to find a way to represent the game board that's both 
+efficient and relatively simple to program and operate. Then our goal is to make the game playable, continuously updating the state of
+the board as both players make their moves. In order to termiate the game and find the winner, we need to detect when the board is in a completed 
+state, then we calculate the winner and present it. After the game is playable, the final step is to make it possible to play against the computer 
+programing a bot that would be able to play in two difficulty settings. The first one (the easy mode) simply makes random plays, the second 
+one calculates the best play it can make at the moment (greedy approach). This means we end up with three different game modes: player versus player,
+player versus bot and bot versus bot. 
+
+\paragraph{}
+Besides all the game logic, the player needs to interact with the game, so we need to develop a simple text base UI, using
+Prolog predicates that are able to interact with the terminal input/output stream. This allows us to read inputs from the
+player (or both players) so that we can use them make moves.
+
+\paragraph{}
+The prolog distribution used was SicStus Prolog using a Student License.
+
+\newpage
+
+\tableofcontents
+
+%************************************************************************************************
+%************************************************************************************************
+
+%*************************************************************************************************
+%************************************************************************************************
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TODO complete
+\section{Introduction}
+\paragraph{}
+This project was developed during the Logic Programing Course in the context of the third the Integrated Masters in Informatics 
+and Computing Engineering. The goal is to implement in Prolog a board game, in this case \textit{Mbrane}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{Game Presentation}
+
+\subsection{Origin}
+
+\paragraph{}
+Mbrane is a fairly recent game. It was created in 2013 by someone who goes by the name of DukeZhou. 
+When he was a kid, DukeZhou really liked to play strategy board games, but he didn’t like games where luck was a 
+relevant factor, he liked games where the player with superior strategy or the one “who played better” was definitely the winner. 
+Games like chess or checkers were all he was into. n 2005 he discovered Sudoku, and even though puzzles were not his favorite type 
+of game, he was amazed by the game. The sheer amount of combinations for a 9x9 board is around $6.7*10^21$. That factor combined with 
+the all restraints the puzzle imposes made it feel somewhat magical.
+
+\paragraph{}
+In May 2013 while he was playing Fallout 3 the rules of Mbrane dropped into his head all at once. He immediately called a friend whom
+he used to play chess with and they spent hours playing and discovering the game, getting more and more fascinated with it as time went by.
+
+\paragraph{}
+The full story, taken from the journals of DukeZhou can be read in the following address: 
+http://mbranegame.com/origin-of-mbrane \cite{Origin}.
+
+\subsection{Rules}
+The following rules are the official rules for Mbrane, in their integral redaction.
+Mbrane is divided in two distinct phases: the placement phase and the resolution phase
+
+\subsubsection{Placement phase}
+\begin{itemize}
+    \item Players take turns placing numbers in an empty Sudoku. These are bids for territories. 
+\end{itemize}
+\begin{center}
+    \includegraphics[scale=0.5]{img/tutorial_1.png}
+\end{center}
+
+\pagebreak
+\begin{itemize}
+    \item Players receive points equal to the number in the region where the number is placed. These points 
+    are known as \textbf{Power}.
+\end{itemize}
+\begin{center}
+    \includegraphics[scale=0.5]{img/tutorial_2.png}
+\end{center}
+
+\begin{itemize}
+    \item If a number borders other regions, horizontally, vertically or diagonally, the player receives 
+    1/2 points in those border regions.  These points are known as \textbf{Influence}.
+\end{itemize}
+\begin{center}
+    \includegraphics[scale=0.5]{img/tutorial_3.png}
+\end{center}
+
+\begin{itemize}
+    \item Placement conforms to the rules of Sudoku, so a number may only be placed once in a region, row or 
+    column. (Broken Sudoku will occur.)
+    \item When all numbers that can be placed have been placed, the gameboard is resolved. \textbf{Resolution} 
+    determines the outcome.
+\end{itemize}
+
+\pagebreak
+\subsubsection{Resolution Phase}
+
+\begin{itemize}
+    \item Regions are resolved in order of the greatest disparity. These are the regions with greatest point 
+    difference between players.
+\end{itemize}
+\begin{center}
+    \includegraphics[scale=0.5]{img/tutorial_4.png}
+\end{center}
+
+\begin{itemize}
+    \item When a region is resolved, it is awarded to the player with the most points in the region, known as the dominant player.
+    \item All opposing numbers in that region defect, flipping to the dominant player. This player is now said to have control.
+\end{itemize}
+\begin{center}
+    \includegraphics[scale=0.5]{img/tutorial_5.png}
+\end{center}
+
+\begin{itemize}
+    \item If these numbers border other regions, they switch their \textbf{Influence} points. (This can shift the balance of power, 
+    affecting the outcome of the game!)
+\end{itemize}
+\begin{center}
+    \includegraphics[scale=0.5]{img/tutorial_6.png}
+\end{center}
+
+\begin{itemize}
+    \item When all regions that can be resolved, have been resolved, the player controlling the most regions wins.
+    \item Strength of victory is measured by the ratio of controlled regions between players, such as 5/4, 4/5, 4/4, 9/0, 0/9,\ldots
+\end{itemize}
+
+\paragraph{}
+The official rules can be consulted in the address: http://mbranegame.com/rules-of-m \cite{Rules}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{Game Logic}
+
+Descrever o projeto e implementação da lógica do jogo em Prolog, incluindo a forma de representação do estado do tabuleiro e sua visualização, execução de movimentos, verificação do cumprimento das regras do jogo, determinação do final do jogo e cálculo das jogadas a realizar pelo computador utilizando diversos níveis de jogo. Sugere-se a estruturação desta secção da seguinte forma:
+
+% TODO complete
+\subsection{Game state representation} 
+Although the user can only be able to see one board at a time, in a any phase of the game, there are actually three
+boards represented in the game’s data structures. There’s a board predicate that represents the game board itself, a
+list of 9 lists each representing a line of the board. This is the board used to print the state of the game. There’s 
+also a \textbf{board\_blocks} predicate. This predicate is also a list of 9 lists, each one representing a 3 by 3 block of the 
+board, this is used to facilitate calculations involving power in each block and influence in adjacent blocks caused 
+by the placement of a number in the edge of a block. Finally we have a \textbf{board\_influence} list that stores the values of 
+power (and spread influence) in each block of the board.  When a player adds a number to cell, all the boards are 
+updated accordingly.
+
+
+% TODO complete
+\subsection{Board viewing} 
+Descrever a interface com o utilizador, descrevendo a visualização do estado do jogo (pode ser idêntico ao descrito no relatório intercalar) e robustez da interface/validações de entrada.
+
+% TODO complete
+\subsection{List valid plays} 
+Obtenção de uma lista de jogadas possíveis. O predicado deve chamar-se \textit{valid\_moves(+Board, +Player, -ListOfMoves)}.
+
+% TODO complete
+\subsection{Play execution} 
+Validação e execução de uma jogada num tabuleiro, obtendo o novo estado do jogo. O predicado deve chamar-se \textit{move(+Move, +Board, -NewBoard)}.
+
+\paragraph{}
+The number placing rules are the ones of Sudoku, so the player can only place a number if that same number is not present
+in either the column, row or 3x3 section of the square the player wants to place it. If these conditions are met, 
+the number is able to be placed.
+
+% TODO complete
+\subsection{Game finalization} 
+Verificação do fim do jogo, com identificação do vencedor. O predicado deve chamar-se \textit{game\_over(+Board, -Winner)}.
+
+\paragraph{}
+The game is in the final state if no more numbers can be placed on the board. When this happens the game enters the 
+\textbf{Resolution Phase} and proceds to make the calculartions mentioned in \textbf{Section 2}. Then the winner (if it exists) is
+announced. 
+
+% TODO complete
+\subsection{Board evaluation}
+Avaliação do estado do jogo, que permitirá comparar a aplicação das diversas jogadas disponíveis. O predicado deve chamar-se \textit{value(+Board, +Player, -Value)}.
+
+% TODO complete
+\subsection{Plays of the computer} 
+Escolha da jogada a efetuar pelo computador, dependendo do nível de dificuldade. O predicado deve chamar-se \textit{choose\_move(+Board, +Level, -Move)}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+% TODO complete
+\section{Conclusions}
+Que conclui deste projecto? Como poderia melhorar o trabalho desenvolvido?
+
+
+\clearpage
+%\addcontentsline{toc}{section}{Bibliografia}
+\renewcommand\refname{Apendix}
+\bibliographystyle{apalike}
+\bibliography{myrefs}
+
+\newpage
+\appendix
+% \section{Nome do Anexo}
+% Outros elementos úteis que não sejam essenciais ao relatório.
+
+\end{document}
