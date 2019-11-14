@@ -1,6 +1,6 @@
-:- dynamic(board/1).
-:- dynamic(board_blocks/1).
-:- dynamic(board_influence/1).
+:-dynamic(board/1).
+:-dynamic(board_blocks/1).
+:-dynamic(board_influence/1).
 
 % starting board list of lines
 board([
@@ -38,27 +38,28 @@ destroy_board(BL,BB,BI):-
 
 % save_board
 % BL,BB,BI - boards to assert
-save_board(BL,BC,BB):-
+save_board(BL,BB,BI):-
 	assertz(board(BL)),
-	assertz(board_blocks(BC)),
-	assertz(board_influence(BB)).
+	assertz(board_blocks(BB)),
+	assertz(board_influence(BI)).
 
 % make_move
 % X,Y 	- coordinates
 % V		- value
 make_move(X,Y,V,BL,BB,BI,RL,RB,RI):-
-	check_move(X,Y,V,BL),!,place_piece(X,Y,V,BL,BB,BI,RL,RB,RI);
-	(RL = BL,RB = BB,RI = BI).
+	check_move(X,Y,V,BL),!,place_piece(X,Y,V,BL,BB,BI,RL,RB,RI).
 
 % check_move
 % X,Y 	- coordinates
 % V 	- value
-check_move(X,Y,V,B):-
-	X > -1,X < 9,
-	Y > -1,Y < 9,
-	V > -1,V < 9,
-	nth0(Y,B,L),nth0(X,L,E),
-	E = ' '.
+check_move(X,Y,V,B):-check_x(X),check_y(Y),check_v(V),check_cell(X,Y,B),!.
+check_move(X,Y,V,B):-write('error move'),nl,fail.
+
+check_x(X):-X>=0,X=<8.
+check_y(Y):-Y>=0,Y=<8.
+check_v(V):-V>=0,V=<8.
+check_cell(X,Y,B):-nth0(Y,B,L),nth0(X,L,E),E=' '.
+
 
 % update_power
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!WARNING!!!!!!!!!!!! BAD
@@ -96,6 +97,6 @@ place_piece(X,Y,V,BL,BB,BI,RL,RB,RI):-
 	place_piece_blocks(B,N,V,BB,RB),
 	place_piece_influence(B,V,BI,RI).
 
-place_piece_board(X,Y,V,BL,RL):-  	replace_matrix(BL,X,Y,V,RL).
-place_piece_blocks(B,N,V,BB,RB):- 	replace_matrix(BB,B,N,V,RB).
-place_piece_influence(B,V,BI,RI):- replace(BI,B,V,RI).
+place_piece_board(X,Y,V,BL,RL):-replace_matrix(BL,X,Y,V,RL).
+place_piece_blocks(B,N,V,BB,RB):-replace_matrix(BB,B,N,V,RB).
+place_piece_influence(B,V,BI,RI):-replace(BI,B,V,RI).

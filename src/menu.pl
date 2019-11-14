@@ -55,6 +55,7 @@ about_menu:-
     wait_enter.
 
 game_ui(Player1,Player2):-
+    nl,nl,nl,nl,
     format('~s~n',[Player1]),
     format('                 ~p~n','VS'),
     format('~t~s~37|~n',[Player2]).

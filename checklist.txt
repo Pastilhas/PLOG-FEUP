@@ -1,0 +1,7 @@
+TODO by priority:
+    Check complete board
+    Sudoku restrictions
+    Update influence board and block board
+    Player 2 plays negative pieces
+    Display writes only positive numbers
+    Display shows influence in each block
