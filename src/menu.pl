@@ -1,4 +1,4 @@
-main_menu(OP):-
+main_menu(OP):- 
     write('+------------------------------------------+'), nl,
     write('|                                          |'), nl,
     write('|                  Mbrane                  |'), nl,
@@ -11,7 +11,7 @@ main_menu(OP):-
     write('+------------------------------------------+'), nl,
     get_option('Option: ', OP).
 
-player_select(OP):-
+player_select(OP):- 
     write('+------------------------------------------+'), nl,
     write('|                                          |'), nl,
     write('|             Select Game Mode             |'), nl,
@@ -24,7 +24,7 @@ player_select(OP):-
     write('+------------------------------------------+'), nl,
     get_option('Option: ', OP).
 
-instructions_menu:-
+instructions_menu:- 
     write('+------------------------------------------+'), nl,
     write('|                                          |'), nl,
     write('|               Instructions               |'), nl,
@@ -38,7 +38,7 @@ instructions_menu:-
     write('+------------------------------------------+'), nl,
     wait_enter.
 
-about_menu:-
+about_menu:- 
     write('+------------------------------------------+'), nl,
     write('|                                          |'), nl,
     write('|                   About                  |'), nl,
@@ -54,7 +54,7 @@ about_menu:-
     write('+------------------------------------------+'), nl,
     wait_enter.
 
-game_ui(Player1, Player2):-
+game_ui(Player1, Player2):- 
     nl, nl, nl, nl,
     format('~s~n', [Player1]),
     format('                 ~p~n', 'VS'),

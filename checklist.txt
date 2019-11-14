@@ -1,4 +1,5 @@
 TODO by priority:
+    REMOVER BOARD GLOBAL 
     Sudoku restrictions
     Update influence board and block board
     Player 2 plays negative pieces
