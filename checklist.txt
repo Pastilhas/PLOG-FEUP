@@ -1,5 +1,4 @@
 TODO by priority:
-    Check complete board
     Sudoku restrictions
     Update influence board and block board
     Player 2 plays negative pieces
