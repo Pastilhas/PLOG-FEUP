@@ -19,4 +19,4 @@ draw_line([H|T], J) :-
 	draw_line(T, NJ).
 
 
-display_power([B|P]) :- nl,write('Power '),write(P),nl,nl.
+display_power(P) :- nl,write('Power '),write(P),nl,nl.

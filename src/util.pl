@@ -3,7 +3,7 @@
 get_option(M, O) :- write(M), get_char(O), get_char(_).
 
 % get_int
-get_int(M, I) :- write(M), get_code(C), C > 47, C < 58, get_code(10), I is C - 48.
+get_int(M, I) :- write(M), get_code(C), C > 47, C < 58, repeat, get_code(10), I is C - 48, !.
 get_int(M,I) :- write('Invalid number\n'), get_int(M,I).
 
 % abs
@@ -61,3 +61,11 @@ msg(M) :- nl,write(M),nl.
 
 % cls
 cls :- write('\e[H\e[2J').
+
+% get_line
+get_line([H|_],0,H):-!.
+get_line([_|T],I,X) :- I1 is I-1, get_line(T,I1,X).
+
+% get_column
+get_column([],_,[]).
+get_column([H|T], I, [R|X]):- get_line(H, I, R), get_column(T,I,X).

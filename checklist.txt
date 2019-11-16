@@ -1,7 +1,5 @@
 TODO by priority:
-    REMOVER BOARD GLOBAL 
-    Sudoku restrictions
-    Update influence board and block board
-    Player 2 plays negative pieces
-    Display writes only positive numbers
-    Display shows influence in each block
+1. make block restriction
+2. make random bot
+3. make not random bot
+4. make resolution phase

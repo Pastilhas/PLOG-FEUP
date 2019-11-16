@@ -29,29 +29,27 @@ board_influence([0, 0, 0, 0, 0, 0, 0, 0, 0]).
 start_board([BL,BB,BI]) :- board(BL), board_blocks(BB), board_influence(BI).
 
 % make_move
-make_move([X, Y], V, [BL, BB, BI], [RL, RB, RI]) :- check_move(X, Y, V, BL, BB), place_piece(X, Y, V, BL, BB, BI, RL, RB, RI).
+make_move([X, Y], V, [BL, BB, BI], [RL, RB, RI]) :- place_piece(X, Y, V, BL, BB, BI, RL, RB, RI).
 make_move(_, _, _, _) :- msg('error move'), fail.
 
 % check_move
 check_move(X, Y, V, BL, BB) :- 
 	check_x(X), check_y(Y), check_v(V), 
-	check_cell(X, Y, BL), check_restrictions(X, Y, V, BL, BB).
+	check_cell(X, Y, BL), \+ check_restrictions(X, Y, V, BL, BB).
+check_move(_,_,_,_,_) :- write('Invalid move.'),nl,nl,fail.
 
 % check_move auxiliar
 check_x(X) :- valid(X).
 check_y(Y) :- valid(Y).
 check_v(V) :- abs(V,A), valid(A).
 check_cell(X, Y, B) :- nth0(Y, B, L), nth0(X, L, ' ').
-check_restrictions(X, Y, V, BL, BB) :- nl,check_line(8, Y, V, BL), check_column(X, 8, V, BL), coords_to_blocks(X, Y, B, _), check_block(B, 8, V, BB).
-check_line(0, _, _, _) :- true.
-check_line(X, Y, V, BL) :- nth0(Y, BL, L), nth0(X, L, V), fail.
-check_line(X, Y, V, BL) :- NX is -1 + X, check_line(NX, Y, V, BL).
-check_column(_, 0, _, _) :- true.
-check_column(X, Y, V, BL) :- nth0(Y, BL, L), nth0(X, L, V), fail.
-check_column(X, Y, V, BL) :- NY is -1 + Y, check_column(X, NY, V, BL).
-check_block(_, 0, _, _) :- true.
-check_block(B, N, V, BB) :- nth0(B, BB, L), nth0(N, L, V), fail.
-check_block(B, N, V, BB) :- NN is -1 + N, check_block(B, NN, V, BB).
+check_restrictions(X,Y,P,BL,BB) :-
+	abs(P,V), NV is -V,
+	(
+		(get_line(BL,Y,L), (member(V,L); member(NV,L)));
+		(get_column(BL,X,C), (member(V,C); member(NV,C)));
+		(coords_to_blocks(X, Y, B, _), get_line(BB,B,F), (member(V,F); member(NV,F)))
+	).
 
 % place_piece
 place_piece(X, Y, V, BL, BB, BI, RL, RB, RI) :- 

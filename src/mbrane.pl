@@ -39,25 +39,25 @@ game_2bots :-
 	wait_enter.
 
 % game_loop_2players
-game_loop_2players(P1, P2, Play, [BL|B]) :- 
+game_loop_2players(P1, P2, Play, [BL,BB,BI]) :- 
 	even(Play),
 	% Player 1 plays
 	display_game(BL, P1, P2),
-	display_power(B),
+	display_power(BI),
 	write('Play '), write(Play),nl, !,
-	player_turn([BL|B], 1, [RL|R]),!,
+	player_turn([BL,BB,BI], 1, [RL|R]),!,
 	% Check complete board
 	incomplete_board(RL),
 	% Next play
 	NextPlay is Play + 1,
 	game_loop_2players(P1,P2,NextPlay,[RL|R]).
 
-game_loop_2players(P1, P2, Play, [BL|B]) :-
+game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 	% Player 2 plays
 	display_game(BL, P1, P2),
-	display_power(B),
+	display_power(BI),
 	write('Play '), write(Play),nl, !,
-	player_turn([BL|B], -1, [RL|R]),!,
+	player_turn([BL,BB,BI], -1, [RL|R]),!,
 	% Check complete board
 	incomplete_board(RL),
 	% Next play
@@ -71,8 +71,9 @@ incomplete_board(RL) :-
 
 % player_turn
 % get player input and make move
-player_turn(B, P, R) :- 
+player_turn([BL,BB,BI], P, R) :- 
 	repeat,
-	get_move(X, Y, V), !,
-	TV is P * V, !,
-	make_move([X, Y], TV, B, R).
+	get_move(X, Y, V),
+	TV is P * V,
+	check_move(X, Y, TV, BL, BB),!,
+	make_move([X, Y], TV, [BL,BB,BI], R).
