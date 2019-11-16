@@ -78,44 +78,57 @@ update_influence(BI, 8, 7, V, RI) :- update_power(BI, 8, V, RI).
 update_influence(BI, B, N, V, EI) :- update_power(BI, B, V, RI), INF is V/2, update_influence_(RI, B, N, INF, EI).
 
 % update_influence auxiliar
-update_influence_(BI, B, 0, V, EI) :- 
-	B_UP is -3 + B, B_LF is -1 + B, 
-	valid(B_UP), valid(B_LF),
-	update_power(BI, B_UP, V, RI), update_power(RI, B_LF, V, EI).
+update_influence_(BI, B, 0, V, RI) :- 
+	B1 is B - 3, B2 is B - 1, B3 is B - 4,(
+	((B2 = 2; B2 = 5), valid(B1), update_power(BI, B1, V, RI));
+	(valid(B1), valid(B2), update_power(BI, B1, V, CI), update_power(CI, B2, V, DI), update_power(DI, B3, V, RI));
+	(valid(B1), update_power(BI, B1, V, RI));
+	(valid(B2), update_power(BI, B2, V, RI));
+	RI = BI).
 
 update_influence_(BI, B, 1, V, RI) :- 
-	B_UP is -3 + B, 
-	valid(B_UP),
-	update_power(BI, B_UP, V, RI).
+	B1 is B - 3, (
+	valid(B1), update_power(BI, B1, V, RI);
+	RI = BI).
 
-update_influence_(BI, B, 2, V, EI) :- 
-	B_UP is -3 + B, B_RT is B + 1, 
-	valid(B_UP), valid(B_RT),
-	update_power(BI, B_UP, V, RI), update_power(RI, B_RT, V, EI).
+update_influence_(BI, B, 2, V, RI) :- 
+	B1 is B - 3, B2 is B + 1, B3 is B - 2,(
+	((B2 = 3; B2 = 6), valid(B1), update_power(BI, B1, V, RI));
+	(valid(B1), valid(B2), update_power(BI, B1, V, CI), update_power(CI, B2, V, DI), update_power(DI, B3, V, RI));
+	(valid(B1), update_power(BI, B1, V, RI));
+	(valid(B2), update_power(BI, B2, V, RI));
+	RI = BI).
 	
 update_influence_(BI, B, 3, V, RI) :- 
-	B_LF is -1 + B, 
-	valid(B_LF),
-	update_power(BI, B_LF, V, RI).
+	B1 is B - 1, (
+	valid(B1), update_power(BI, B1, V, RI);
+	RI = BI).
 
 update_influence_(BI, B, 5, V, RI) :- 
-	B_RT is B + 1, 
-	update_power(BI, B_RT, V, RI).
+	B1 is B + 1, (
+	valid(B1), update_power(BI, B1, V, RI);
+	RI = BI).
 
-update_influence_(BI, B, 6, V, EI) :- 
-	B_DN is B + 3, B_LF is B + 1, 
-	valid(B_DN), valid(B_LF),
-	update_power(BI, B_DN, V, RI), update_power(RI, B_LF, V, EI).
+update_influence_(BI, B, 6, V, RI) :- 
+	B1 is B + 3, B2 is B - 1, B3 is B + 2,(
+	((B2 = 2; B2 = 5), valid(B1), update_power(BI, B1, V, RI));
+	(valid(B1), valid(B2), update_power(BI, B1, V, CI), update_power(CI, B2, V, DI), update_power(DI, B3, V, RI));
+	(valid(B1), update_power(BI, B1, V, RI));
+	(valid(B2), update_power(BI, B2, V, RI));
+	RI = BI).
 
 update_influence_(BI, B, 7, V, RI) :- 
-	B_DN is B + 3, 
-	valid(B_DN),
-	update_power(BI, B_DN, V, RI).
+	B1 is B + 3, (
+	valid(B1), update_power(BI, B1, V, RI);
+	RI = BI).
 
-update_influence_(BI, B, 8, V, EI) :- 
-	B_DN is B + 3, B_RT is B + 1,
-	valid(B_DN), valid(B_RT),
-	update_power(BI, B_DN, V, RI), update_power(RI, B_RT, V, EI).
+update_influence_(BI, B, 8, V, RI) :- 
+	B1 is B + 3, B2 is B + 1, B3 is B + 4,(
+	((B2 = 3; B2 = 6), valid(B1), update_power(BI, B1, V, RI));
+	(write(B1),valid(B1), valid(B2), update_power(BI, B1, V, CI), update_power(CI, B2, V, DI), update_power(DI, B3, V, RI));
+	(valid(B1), update_power(BI, B1, V, RI));
+	(valid(B2), update_power(BI, B2, V, RI));
+	RI = BI).
 
 % update_power
 update_power([H|T], I, V, [H|R]) :- I > 0, NI is I - 1, update_power(T, NI, V, R).

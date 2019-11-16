@@ -42,7 +42,9 @@ game_2bots :-
 game_loop_2players(P1, P2, Play, [BL|B]) :- 
 	even(Play),
 	% Player 1 plays
-	display_game(BL, P1, P2),!,
+	display_game(BL, P1, P2),
+	display_power(B),
+	write('Play '), write(Play),nl, !,
 	player_turn([BL|B], 1, [RL|R]),!,
 	% Check complete board
 	incomplete_board(RL),
@@ -52,7 +54,9 @@ game_loop_2players(P1, P2, Play, [BL|B]) :-
 
 game_loop_2players(P1, P2, Play, [BL|B]) :-
 	% Player 2 plays
-	display_game(BL, P1, P2),!,
+	display_game(BL, P1, P2),
+	display_power(B),
+	write('Play '), write(Play),nl, !,
 	player_turn([BL|B], -1, [RL|R]),!,
 	% Check complete board
 	incomplete_board(RL),
@@ -68,6 +72,7 @@ incomplete_board(RL) :-
 % player_turn
 % get player input and make move
 player_turn(B, P, R) :- 
-	get_move(X, Y, V),
+	repeat,
+	get_move(X, Y, V), !,
 	TV is P * V, !,
 	make_move([X, Y], TV, B, R).

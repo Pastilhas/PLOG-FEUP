@@ -1,4 +1,5 @@
 main_menu(OP) :- 
+    cls,
     write('+------------------------------------------+'), nl,
     write('|                                          |'), nl,
     write('|                  Mbrane                  |'), nl,

@@ -58,3 +58,6 @@ even(N) :- 0 is mod(N,2).
 
 % msg
 msg(M) :- nl,write(M),nl.
+
+% cls
+cls :- write('\e[H\e[2J').
