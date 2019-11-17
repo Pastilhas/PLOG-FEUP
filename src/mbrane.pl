@@ -1,3 +1,8 @@
+/*	PLOG 2019/2020
+ *	Leonardo Moura & Joao Campos
+ *	Main file of project
+ */
+ 
  :- use_module(library(lists)).
 
  :- include('util.pl').
@@ -6,7 +11,7 @@
  :- include('display.pl').
  :- include('bot.pl').
 
-mbrane :- main_menu(OP), repeat, mbrane(OP).
+play :- main_menu(OP), repeat, mbrane(OP).
 mbrane('0') :- game, fail.
 mbrane('1') :- instructions_menu, fail.
 mbrane('2') :- about_menu, fail.
@@ -17,8 +22,6 @@ game('0') :- game_2players, fail.
 game('1') :- game_player_bot, fail.
 game('2') :- game_2bots, fail.
 game(_) :- true.
-
-display_game(B, P1, P2) :- game_ui(P1, P2), display_board(B).
 
 % game_2players
 game_2players :- 
@@ -50,10 +53,11 @@ game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 	write('Play '), write(Play),nl, !,
 	player_turn([BL,BB,BI], 1, [RL|R]),!,
 	% Check complete board
-	game_over([BL,BB,BI],W),
+	(\+game_over([BL,BB,BI],W),
 	% Next play
 	NextPlay is Play + 1,
-	game_loop_2players(P1,P2,NextPlay,[RL|R]).
+	game_loop_2players(P1,P2,NextPlay,[RL|R]));
+		display_win(BL, P1, P2).
 
 game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 	% Player 2 plays
@@ -62,10 +66,11 @@ game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 	write('Play '), write(Play),nl, !,
 	player_turn([BL,BB,BI], -1, [RL|R]),!,
 	% Check complete board
-	game_over([BL,BB,BI],W),
+	(\+game_over([BL,BB,BI],W),
 	% Next play
 	NextPlay is Play + 1,
-	game_loop_2players(P1,P2,NextPlay,[RL|R]).
+	game_loop_2players(P1,P2,NextPlay,[RL|R]));
+		display_win(BL, P1, P2).
 
 % game_over
 game_over([B|BI],W) :- 

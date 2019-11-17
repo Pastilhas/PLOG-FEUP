@@ -1,3 +1,8 @@
+/*	PLOG 2019/2020
+ *	Leonardo Moura & Joao Campos
+ *	File responsible for interaction with the board
+ */
+
 % starting board list of lines
 board([
 	[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],

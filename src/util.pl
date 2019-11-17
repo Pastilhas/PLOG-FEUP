@@ -1,5 +1,9 @@
-% get_option
-% Option    - return option
+/*	PLOG 2019/2020
+ *	Leonardo Moura & Joao Campos
+ *	File with generic function used in the code
+ */
+
+% get_option(+Message, -Option)
 get_option(M, O) :- write(M), get_char(O), get_char(_).
 
 % get_int
