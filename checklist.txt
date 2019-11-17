@@ -1,4 +1,3 @@
 TODO by priority:
-    1. make random bot
-    2. make not random bot
-    3. make resolution phase
+    1. make not random bot
+    2. make resolution phase

@@ -34,14 +34,14 @@ board_influence([0, 0, 0, 0, 0, 0, 0, 0, 0]).
 start_board([BL,BB,BI]) :- board(BL), board_blocks(BB), board_influence(BI).
 
 % move
-move([X, Y, V], [BL, BB, BI], [RL, RB, RI]) :- place_piece(X, Y, V, BL, BB, BI, RL, RB, RI).
-move(_, _, _, _) :- msg('error move'), fail.
+move(Coords, Board, Result) :- place_piece(Coords, Board, Result).
+move(_, _, _) :- msg('error move'), fail.
 
 % check_move
 check_move(X, Y, V, BL, BB) :- 
 	check_x(X), check_y(Y), check_v(V), 
 	check_cell(X, Y, BL), \+ check_restrictions(X, Y, V, BL, BB).
-check_move(_,_,_,_,_) :- write('Invalid move.'),nl,nl,fail.
+check_move(_,_,_,_,_) :- fail.
 
 % check_move auxiliar
 check_x(X) :- valid(X).
@@ -57,7 +57,7 @@ check_restrictions(X,Y,P,BL,BB) :-
 	).
 
 % place_piece
-place_piece(X, Y, V, BL, BB, BI, RL, RB, RI) :- 
+place_piece([X, Y, V], [BL, BB, BI], [RL, RB, RI]) :- 
 	place_piece_board(X, Y, V, BL, RL),
 	coords_to_blocks(X, Y, B, N),
 	place_piece_blocks(B, N, V, BB, RB),

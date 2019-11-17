@@ -4,6 +4,7 @@
  */
  
  :- use_module(library(lists)).
+ :- use_module(library(random)). 
 
  :- include('util.pl').
  :- include('menu.pl').
@@ -12,15 +13,15 @@
  :- include('bot.pl').
 
 play :- main_menu(OP), repeat, mbrane(OP).
-mbrane('0') :- game, fail.
+mbrane('0') :- game.
 mbrane('1') :- instructions_menu, fail.
 mbrane('2') :- about_menu, fail.
 mbrane(_) :- true.
 
 game :- player_select(OP), repeat, game(OP).
-game('0') :- game_2players, fail.
-game('1') :- game_player_bot, fail.
-game('2') :- game_2bots, fail.
+game('0') :- game_2players.
+game('1') :- game_player_bot.
+game('2') :- game_2bots.
 game(_) :- true.
 
 % game_2players
@@ -28,21 +29,18 @@ game_2players :-
 	get_player(P1),
 	get_player(P2),
 	start_board(B),
-	game_loop_2players(P1,P2,0,B),
-	wait_enter.
+	game_loop_2players(P1,P2,0,B).
 
 % game_player_bot
 game_player_bot :- 
-	board(BB),
 	get_player(Player),
-	display_game(BB, Player, "Bot"),
-	wait_enter.
+	start_board(B),
+	game_loop_player_bot(Player,"Bot",0,B).
 
 % game_2bots
 game_2bots :- 
-	board(BB),
-	display_game(BB, "Bot1", "Bot2"),
-	wait_enter.
+	start_board(B),
+	game_loop_2bots("Bot1","Bot2",0,B).
 
 % game_loop_2players
 game_loop_2players(P1, P2, Play, [BL,BB,BI]) :- 
@@ -50,33 +48,108 @@ game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 	% Player 1 plays
 	display_game(BL, P1, P2),
 	display_power(BI),
-	write('Play '), write(Play),nl, !,
-	player_turn([BL,BB,BI], 1, [RL|R]),!,
+	write('Play '), write(Play),nl,
+	player_turn([BL,BB,BI], 1, R),!,
 	% Check complete board
-	(\+game_over([BL,BB,BI],W),
-	% Next play
-	NextPlay is Play + 1,
-	game_loop_2players(P1,P2,NextPlay,[RL|R]));
-		display_win(BL, P1, P2).
+	game_over(R,W),
+	((	W = 0,
+		NextPlay is Play + 1,
+		game_loop_2players(P1,P2,NextPlay,R)
+	);(
+		write('Winner is '), 
+		(W = -1, write(P2)); write(P1)
+	)).
 
 game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 	% Player 2 plays
 	display_game(BL, P1, P2),
 	display_power(BI),
-	write('Play '), write(Play),nl, !,
-	player_turn([BL,BB,BI], -1, [RL|R]),!,
+	write('Play '), write(Play),nl,
+	player_turn([BL,BB,BI], -1, R),!,
 	% Check complete board
-	(\+game_over([BL,BB,BI],W),
-	% Next play
-	NextPlay is Play + 1,
-	game_loop_2players(P1,P2,NextPlay,[RL|R]));
-		display_win(BL, P1, P2).
+	game_over(R,W),
+	((	W = 0,
+		NextPlay is Play + 1,
+		game_loop_2players(P1,P2,NextPlay,R)
+	);(
+		write('Winner is '), 
+		(W = -1, write(P2)); write(P1)
+	)).
+
+game_loop_player_bot(P1,P2,Play,[BL,BB,BI]) :-
+	even(Play),
+	% Player 1 plays
+	display_game(BL, P1, P2),
+	display_power(BI),
+	write('Play '), write(Play),nl,
+	player_turn([BL,BB,BI], 1, R),!,
+	% Check complete board
+	game_over(R,W),
+	((	W = 0,
+		NextPlay is Play + 1,
+		game_loop_player_bot(P1,P2,NextPlay,R)
+	);(
+		write('Winner is '), 
+		(W = -1, write(P2)); write(P1)
+	)).
+
+
+game_loop_player_bot(P1,P2,Play,[BL,BB,BI]) :-
+	% Bot plays
+	display_game(BL, P1, P2),
+	display_power(BI),
+	write('Play '), write(Play),nl,
+	bot_turn([BL,BB,BI], -1, R),!,
+	% Check complete board
+	game_over(R,W),
+	((	W = 0,
+		NextPlay is Play + 1,
+		game_loop_player_bot(P1,P2,NextPlay,R)
+	);(
+		write('Winner is '), 
+		(W = -1, write(P2)); write(P1)
+	)).
+
+
+game_loop_2bots(P1,P2,Play,[BL,BB,BI]) :-
+	%Bot1 plays
+	even(Play),
+	display_game(BL, P1, P2),
+	display_power(BI),
+	write('Play '), write(Play),nl,
+	bot_turn([BL,BB,BI], 1, R),!,
+	% Check complete board
+	game_over(R,W),
+	((	W = 0,
+		NextPlay is Play + 1,
+		game_loop_2bots(P1,P2,NextPlay,R)
+	);(
+		write('Winner is '), 
+		(W = -1, write(P2)); write(P1)
+	)).
+
+game_loop_2bots(P1,P2,Play,[BL,BB,BI]) :-
+	% Bot 2 plays
+	display_game(BL, P1, P2),
+	display_power(BI),
+	write('Play '), write(Play),nl,
+	bot_turn([BL,BB,BI], -1, R),!,
+	% Check complete board
+	game_over(R,W),
+	((	W = 0,
+		NextPlay is Play + 1,
+		game_loop_2bots(P1,P2,NextPlay,R)
+	);(
+		write('Winner is '), 
+		(W = -1, write(P2)); write(P1)
+	)).
+
 
 % game_over
-game_over([B|BI],W) :- 
-	valid_moves(B, R),
-	R = [],
-	get_winner(BI,W).
+game_over([BL,BB,BI],W) :- 
+	valid_moves([BL,BB], R), !, 
+	((R = [], get_winner(BI,W));
+	(W is 0)).
 
 % get_winner
 get_winner(B,W) :-
@@ -99,3 +172,11 @@ player_turn([BL,BB,BI], P, R) :-
 	TV is P * V,
 	check_move(X, Y, TV, BL, BB),!,
 	move([X, Y, TV], [BL,BB,BI], R).
+
+bot_turn([BL,BB,BI], P, R) :-
+	random_move([BL,BB],X,Y,V),
+	TV is P * V,
+	write([X, Y, TV]),!,
+	move([X, Y, TV], [BL,BB,BI], R).
+
+bot_turn(_, _, _) :- write('no more plays'), true.
