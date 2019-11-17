@@ -104,32 +104,38 @@ game_loop_2bots(P1,P2,Play,[BL,BB,BI]) :-
 	write('Play '), write(Play),nl, !,
 	bot_turn([BL,BB,BI], 1, [RL|R]),!,
 	% Check complete board
-	incomplete_board(RL),
-	% Next play
-	NextPlay is Play + 1,
-	game_loop_2bots(P1,P2,NextPlay,[RL|R]).
+	(
+		\+game_over([B,BI],_),
+		% Next play
+		NextPlay is Play + 1,
+		game_loop_2bots(P1,P2,NextPlay,[RL|R]);
+		game_over([B,BI],W),
+		write('The winner is'),
+		write(W)
+	).
 
 
 game_loop_2bots(P1,P2,Play,[BL,BB,BI]) :-
-	% Bot plays
+	% Bot 2 plays
 	display_game(BL, P1, P2),
 	display_power(BI),
 	write('Play '), write(Play),nl, !,
 	bot_turn([BL,BB,BI], -1, [RL|R]),!,
 	% Check complete board
-	incomplete_board(RL),
-	% Next play
-	NextPlay is Play + 1,
-	game_loop_2bots(P1,P2,NextPlay,[RL|R]).
+	(
+		\+game_over([B,BI],_),
+		% Next play
+		NextPlay is Play + 1,
+		write(lol),
+		game_loop_2bots(P1,P2,NextPlay,[RL|R]);
+		game_over([B,BI],W),
+		write('The winner is'),
+		write(W)
+	).
 
 
-
-% incomplete_board
-% true if board incomplete
-incomplete_board(RL) :- 
-	true.
 % game_over
-game_over([B|BI],W) :- 
+game_over([B,BI],W) :- 
 	valid_moves(B, R),
 	R = [],
 	get_winner(BI,W).

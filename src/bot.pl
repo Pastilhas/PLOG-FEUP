@@ -26,7 +26,7 @@ valid_moves([BL,BB], R) :-
 
 
 % check_all
-check_all(B,L) :- check_all_cells(8,8,B,[],L),write(L).
+check_all(B,L) :- check_all_cells(8,8,B,[],L).
 
 check_all_cells(0, 0, B, [[0,0]|Acc], [0,0]|Acc]) :-
     check_cell(0,0,B).
@@ -54,7 +54,7 @@ check_all_cells(X, Y, B, Acc ,L) :-
     check_all_cells(NX,Y,B,Acc,L).
 
 % test_all
-test_all(I, B, R) :- test_all_cells(8, I, B, [], R), write(R).
+test_all(I, B, R) :- test_all_cells(8, I, B, [], R).
 
 
 test_all_cells(_,[], [BL,BB], Acc, Acc).
