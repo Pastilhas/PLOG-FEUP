@@ -59,7 +59,7 @@ place_piece(X, Y, V, BL, BB, BI, RL, RB, RI) :-
 	update_influence(BI, B, N, V, RI).
 
 place_piece_board(X, Y, V, BL, RL) :- replace_matrix(BL, X, Y, V, RL).
-place_piece_blocks(B, N, V, BB, RB) :- replace_matrix(BB, B, N, V, RB).
+place_piece_blocks(B, N, V, BB, RB) :- replace_matrix(BB, N, B, V, RB).
 
 % update_influence
 update_influence(BI, _, _, 0, BI) :- true.
@@ -123,7 +123,7 @@ update_influence_(BI, B, 7, V, RI) :-
 update_influence_(BI, B, 8, V, RI) :- 
 	B1 is B + 3, B2 is B + 1, B3 is B + 4,(
 	((B2 = 3; B2 = 6), valid(B1), update_power(BI, B1, V, RI));
-	(write(B1),valid(B1), valid(B2), update_power(BI, B1, V, CI), update_power(CI, B2, V, DI), update_power(DI, B3, V, RI));
+	(valid(B1), valid(B2), update_power(BI, B1, V, CI), update_power(CI, B2, V, DI), update_power(DI, B3, V, RI));
 	(valid(B1), update_power(BI, B1, V, RI));
 	(valid(B2), update_power(BI, B2, V, RI));
 	RI = BI).
