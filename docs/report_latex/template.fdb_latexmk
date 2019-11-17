@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex template"] 1573757332 "template.aux" "template.bbl" "template" 1573757335
+["bibtex template"] 1573757332 "template.aux" "template.bbl" "template" 1573763949
   "/usr/share/texmf-dist/bibtex/bst/base/apalike.bst" 1557554374 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "myrefs.bib" 1573666160 553 c2b8d02e88efd18137c0f7dcb1b9146d ""
   "template.aux" 1573757335 2543 e581beb1a61dd16e26cf046ca686fe12 "pdflatex"
   (generated)
   "template.bbl"
   "template.blg"
-["pdflatex"] 1573757334 "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf" "template" 1573757335
+["pdflatex"] 1573757334 "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf" "template" 1573763949
   "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.aux" 1573757335 2543 e581beb1a61dd16e26cf046ca686fe12 ""
-  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" 1573757334 11588 47bf9f5bd44f7dcbb9bd91de2e383f9f ""
+  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" 1573763949 11588 47bf9f5bd44f7dcbb9bd91de2e383f9f ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1557554374 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1557554374 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1557554374 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -77,12 +77,12 @@
   "img/tutorial_6.png" 1573665095 42618 138b1224b4e5ae21aa0b5dc3fc6d57f9 ""
   "template.aux" 1573757335 2543 e581beb1a61dd16e26cf046ca686fe12 "pdflatex"
   "template.bbl" 1573757332 411 d318888fcd184e1f6df8701b0b0ced59 "bibtex template"
-  "template.tex" 1573757334 11588 47bf9f5bd44f7dcbb9bd91de2e383f9f ""
+  "template.tex" 1573763949 11588 47bf9f5bd44f7dcbb9bd91de2e383f9f ""
   "template.toc" 1573757335 1358 d395559ca751f844ccdd95c96149f498 "pdflatex"
   (generated)
-  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf"
-  "template.log"
-  "template.aux"
-  "template.toc"
   "template.pdf"
+  "template.toc"
+  "template.log"
   "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.log"
+  "template.aux"
+  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf"

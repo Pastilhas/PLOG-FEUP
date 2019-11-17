@@ -1,4 +1,5 @@
  :- use_module(library(lists)).
+ :- use_module(library(random)). 
 
  :- include('util.pl').
  :- include('menu.pl').
@@ -30,15 +31,15 @@ game_2players :-
 
 % game_player_bot
 game_player_bot :- 
-	board(BB),
 	get_player(Player),
-	display_game(BB, Player, "Bot"),
+	start_board(B),
+	game_loop_player_bot(Player,"Bot",0,B),
 	wait_enter.
 
 % game_2bots
 game_2bots :- 
-	board(BB),
-	display_game(BB, "Bot1", "Bot2"),
+	start_board(B),
+	game_loop_2_bots("Bot1","Bot2",0,B),
 	wait_enter.
 
 % game_loop_2players
@@ -67,6 +68,62 @@ game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 	NextPlay is Play + 1,
 	game_loop_2players(P1,P2,NextPlay,[RL|R]).
 
+game_loop_player_bot(P1,P2,Play,[BL,BB,BI]) :-
+	even(Play),
+	% Player 1 plays
+	display_game(BL, P1, P2),
+	display_power(BI),
+	write('Play '), write(Play),nl, !,
+	player_turn([BL,BB,BI], 1, [RL|R]),!,
+	% Check complete board
+	incomplete_board(RL),
+	% Next play
+	NextPlay is Play + 1,
+	game_loop_player_bot(P1,P2,NextPlay,[RL|R]).
+
+
+game_loop_player_bot(P1,P2,Play,[BL,BB,BI]) :-
+	% Bot plays
+	display_game(BL, P1, P2),
+	display_power(BI),
+	write('Play '), write(Play),nl, !,
+	bot_turn([BL,BB,BI], -1, [RL|R]),!,
+	% Check complete board
+	incomplete_board(RL),
+	% Next play
+	NextPlay is Play + 1,
+	game_loop_player_bot(P1,P2,NextPlay,[RL|R]).
+
+
+game_loop_2bots(P1,P2,Play,[BL,BB,BI]) :-
+	%Bot1 plays
+	even(Play),
+	% Player 1 plays
+	display_game(BL, P1, P2),
+	display_power(BI),
+	write('Play '), write(Play),nl, !,
+	bot_turn([BL,BB,BI], 1, [RL|R]),!,
+	% Check complete board
+	incomplete_board(RL),
+	% Next play
+	NextPlay is Play + 1,
+	game_loop_2bots(P1,P2,NextPlay,[RL|R]).
+
+
+game_loop_2bots(P1,P2,Play,[BL,BB,BI]) :-
+	% Bot plays
+	display_game(BL, P1, P2),
+	display_power(BI),
+	write('Play '), write(Play),nl, !,
+	bot_turn([BL,BB,BI], -1, [RL|R]),!,
+	% Check complete board
+	incomplete_board(RL),
+	% Next play
+	NextPlay is Play + 1,
+	game_loop_2bots(P1,P2,NextPlay,[RL|R]).
+
+
+
 % incomplete_board
 % true if board incomplete
 incomplete_board(RL) :- 
@@ -79,4 +136,12 @@ player_turn([BL,BB,BI], P, R) :-
 	get_move(X, Y, V),
 	TV is P * V,
 	check_move(X, Y, TV, BL, BB),!,
+	make_move([X, Y], TV, [BL,BB,BI], R).
+
+bot_turn([BL,BB,BI], P, R) :-
+	repeat,
+	random_move([BL,BB],X,Y,V),
+	TV is P * V,
+	check_move(X, Y, TV, BL, BB),!,
+	write(X), write(Y), write(TV),
 	make_move([X, Y], TV, [BL,BB,BI], R).

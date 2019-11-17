@@ -36,7 +36,7 @@ make_move(_, _, _, _) :- msg('error move'), fail.
 check_move(X, Y, V, BL, BB) :- 
 	check_x(X), check_y(Y), check_v(V), 
 	check_cell(X, Y, BL), \+ check_restrictions(X, Y, V, BL, BB).
-check_move(_,_,_,_,_) :- write('Invalid move.'),nl,nl,fail.
+check_move(_,_,_,_,_) :- fail.
 
 % check_move auxiliar
 check_x(X) :- valid(X).
