@@ -2,7 +2,6 @@
 \contentsline {paragraph}{}{2}% 
 \contentsline {paragraph}{}{2}% 
 \contentsline {paragraph}{}{2}% 
-\contentsline {paragraph}{}{2}% 
 \contentsline {section}{\numberline {1}Introduction}{4}% 
 \contentsline {paragraph}{}{4}% 
 \contentsline {paragraph}{}{4}% 
@@ -25,8 +24,9 @@
 \contentsline {subsection}{\numberline {3.6}Board evaluation}{11}% 
 \contentsline {paragraph}{}{11}% 
 \contentsline {paragraph}{}{11}% 
-\contentsline {subsection}{\numberline {3.7}Plays of the computer}{11}% 
-\contentsline {section}{\numberline {4}Conclusions}{12}% 
-\contentsline {paragraph}{}{12}% 
-\contentsline {paragraph}{}{12}% 
-\contentsline {paragraph}{}{12}% 
+\contentsline {subsection}{\numberline {3.7}Game finalization}{11}% 
+\contentsline {subsection}{\numberline {3.8}Plays of the computer}{11}% 
+\contentsline {section}{\numberline {4}Conclusions}{13}% 
+\contentsline {paragraph}{}{13}% 
+\contentsline {paragraph}{}{13}% 
+\contentsline {paragraph}{}{13}% 

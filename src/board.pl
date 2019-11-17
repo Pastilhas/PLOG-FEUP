@@ -1,3 +1,8 @@
+/*	PLOG 2019/2020
+ *	Leonardo Moura & Joao Campos
+ *	File responsible for interaction with the board
+ */
+
 % starting board list of lines
 board([
 	[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
@@ -29,8 +34,8 @@ board_influence([0, 0, 0, 0, 0, 0, 0, 0, 0]).
 start_board([BL,BB,BI]) :- board(BL), board_blocks(BB), board_influence(BI).
 
 % move
-move([X, Y, V], [BL, BB, BI], [RL, RB, RI]) :- place_piece(X, Y, V, BL, BB, BI, RL, RB, RI).
-move(_, _, _, _) :- msg('error move'), fail.
+move(Coords, Board, Result) :- place_piece(Coords, Board, Result).
+move(_, _, _) :- msg('error move'), fail.
 
 % check_move
 check_move(X, Y, V, BL, BB) :- 
@@ -52,7 +57,7 @@ check_restrictions(X,Y,P,BL,BB) :-
 	).
 
 % place_piece
-place_piece(X, Y, V, BL, BB, BI, RL, RB, RI) :- 
+place_piece([X, Y, V], [BL, BB, BI], [RL, RB, RI]) :- 
 	place_piece_board(X, Y, V, BL, RL),
 	coords_to_blocks(X, Y, B, N),
 	place_piece_blocks(B, N, V, BB, RB),

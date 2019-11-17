@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.11.15)  17 NOV 2019 23:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.11.15)  17 NOV 2019 23:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -152,55 +152,55 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/feup-logo.png>] [2] (/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 10.
+(Font)              <7> on input line 9.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 10.
+(Font)              <5> on input line 9.
 )
 \tf@toc=\write3
 \openout3 = `template.toc'.
 
  [3]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 88.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 84.
  (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 88.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
  [4]
 <img/tutorial_1.png, id=24, 223.83624pt x 297.11pt>
 File: img/tutorial_1.png Graphic file (type png)
 <use img/tutorial_1.png>
-Package pdftex.def Info: img/tutorial_1.png  used on input line 139.
+Package pdftex.def Info: img/tutorial_1.png  used on input line 135.
 (pdftex.def)             Requested size: 111.91785pt x 148.55463pt.
  [5 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_1.png>]
 <img/tutorial_2.png, id=30, 222.8325pt x 303.1325pt>
 File: img/tutorial_2.png Graphic file (type png)
 <use img/tutorial_2.png>
-Package pdftex.def Info: img/tutorial_2.png  used on input line 148.
+Package pdftex.def Info: img/tutorial_2.png  used on input line 144.
 (pdftex.def)             Requested size: 111.41597pt x 151.56587pt.
 <img/tutorial_3.png, id=31, 221.82875pt x 297.11pt>
 File: img/tutorial_3.png Graphic file (type png)
 <use img/tutorial_3.png>
-Package pdftex.def Info: img/tutorial_3.png  used on input line 156.
+Package pdftex.def Info: img/tutorial_3.png  used on input line 152.
 (pdftex.def)             Requested size: 110.9141pt x 148.55463pt.
  [6 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_2.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_3.png>]
 <img/tutorial_4.png, id=35, 223.83624pt x 303.1325pt>
 File: img/tutorial_4.png Graphic file (type png)
 <use img/tutorial_4.png>
-Package pdftex.def Info: img/tutorial_4.png  used on input line 174.
+Package pdftex.def Info: img/tutorial_4.png  used on input line 170.
 (pdftex.def)             Requested size: 111.91785pt x 151.56587pt.
 <img/tutorial_5.png, id=36, 222.8325pt x 298.11375pt>
 File: img/tutorial_5.png Graphic file (type png)
 <use img/tutorial_5.png>
-Package pdftex.def Info: img/tutorial_5.png  used on input line 182.
+Package pdftex.def Info: img/tutorial_5.png  used on input line 178.
 (pdftex.def)             Requested size: 111.41597pt x 149.0565pt.
 <img/tutorial_6.png, id=37, 227.85126pt x 302.12875pt>
 File: img/tutorial_6.png Graphic file (type png)
 <use img/tutorial_6.png>
-Package pdftex.def Info: img/tutorial_6.png  used on input line 190.
+Package pdftex.def Info: img/tutorial_6.png  used on input line 186.
 (pdftex.def)             Requested size: 113.92534pt x 151.064pt.
  [7 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_4.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_5.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_6.png>]
-Overfull \hbox (12.8895pt too wide) in paragraph at lines 199--200
+Overfull \hbox (12.8895pt too wide) in paragraph at lines 195--196
  [] \OT1/cmr/m/n/10 The of-fi-cial rules can be con-sulted in the ad-dress: http://mbranegame.com/rules-
  []
 
@@ -208,61 +208,67 @@ Overfull \hbox (12.8895pt too wide) in paragraph at lines 199--200
 <img/board.png, id=45, 912.40875pt x 69.25874pt>
 File: img/board.png Graphic file (type png)
 <use img/board.png>
-Package pdftex.def Info: img/board.png  used on input line 220.
+Package pdftex.def Info: img/board.png  used on input line 219.
 (pdftex.def)             Requested size: 273.72473pt x 20.77777pt.
 <img/display.png, id=46, 942.52126pt x 594.22pt>
 File: img/display.png Graphic file (type png)
 <use img/display.png>
-Package pdftex.def Info: img/display.png  used on input line 232.
+Package pdftex.def Info: img/display.png  used on input line 231.
 (pdftex.def)             Requested size: 282.75856pt x 178.26736pt.
  [9 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/board.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/display.png>]
 <img/test_all.png, id=50, 448.67625pt x 364.36125pt>
 File: img/test_all.png Graphic file (type png)
 <use img/test_all.png>
-Package pdftex.def Info: img/test_all.png  used on input line 242.
+Package pdftex.def Info: img/test_all.png  used on input line 241.
 (pdftex.def)             Requested size: 179.46732pt x 145.74191pt.
 <img/player_turn.png, id=51, 363.3575pt x 175.65625pt>
 File: img/player_turn.png Graphic file (type png)
 <use img/player_turn.png>
-Package pdftex.def Info: img/player_turn.png  used on input line 252.
+Package pdftex.def Info: img/player_turn.png  used on input line 251.
 (pdftex.def)             Requested size: 145.34041pt x 70.26125pt.
  [10 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/test_all.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/player_turn.png>]
 <img/game_over.png, id=55, 415.5525pt x 374.39874pt>
 File: img/game_over.png Graphic file (type png)
 <use img/game_over.png>
-Package pdftex.def Info: img/game_over.png  used on input line 265.
+Package pdftex.def Info: img/game_over.png  used on input line 264.
 (pdftex.def)             Requested size: 166.21805pt x 149.75684pt.
 
-Overfull \hbox (18.89032pt too wide) in paragraph at lines 275--277
+Overfull \hbox (18.89032pt too wide) in paragraph at lines 275--278
  [] \OT1/cmr/m/n/10 We eval-u-ate if a play is pos-si-ble us-ing the \OT1/cmr/m/it/10 check[]move(+X,+Y,+Value,+BL,+BB)\OT1/cmr/m/n/10 ,
+ []
+
+
+Overfull \hbox (23.14713pt too wide) in paragraph at lines 279--282
+\OT1/cmr/m/it/10 get[]winner(+Board, -Winner)\OT1/cmr/m/n/10 . >>>>>>> 889e61c990fc3b6be83a5a63602e5d1bce5fdd98 
  []
 
 <img/check_move.png, id=56, 644.4075pt x 136.51pt>
 File: img/check_move.png Graphic file (type png)
 <use img/check_move.png>
-Package pdftex.def Info: img/check_move.png  used on input line 279.
+Package pdftex.def Info: img/check_move.png  used on input line 284.
 (pdftex.def)             Requested size: 257.75844pt x 54.60303pt.
-<img/bot_move.png, id=57, 417.56pt x 105.39375pt>
+[11 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/game_over.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/check_move.png>]
+<img/bot_move.png, id=60, 417.56pt x 105.39375pt>
 File: img/bot_move.png Graphic file (type png)
 <use img/bot_move.png>
-Package pdftex.def Info: img/bot_move.png  used on input line 289.
+Package pdftex.def Info: img/bot_move.png  used on input line 294.
 (pdftex.def)             Requested size: 167.02103pt x 42.15674pt.
-[11 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/game_over.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/check_move.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/bot_move.png>] [12] (/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.bbl) [13
+ [12 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/bot_move.png>] [13] (/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.bbl) [14
 
 ] (/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.aux) ) 
 Here is how much of TeX's memory you used:
- 2318 strings out of 492167
- 33692 string characters out of 6131557
+ 2317 strings out of 492167
+ 33684 string characters out of 6131557
  108016 words of memory out of 5000000
- 6632 multiletter control sequences out of 15000+600000
+ 6631 multiletter control sequences out of 15000+600000
  9015 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,7n,30p,386b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf (13 pages, 621005 bytes).
+Output written on /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf (14 pages, 622475 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
