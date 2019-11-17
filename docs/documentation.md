@@ -78,7 +78,7 @@ Draw the line on the screen.
 
 ## Moves
 
-### make_move(+X,+Y,+V)
+### move(+X,+Y,+V)
 
 Checks if the move is possible, places the piece on the board and updates the power.
 

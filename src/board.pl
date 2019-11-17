@@ -28,9 +28,9 @@ board_influence([0, 0, 0, 0, 0, 0, 0, 0, 0]).
 % get starting boards
 start_board([BL,BB,BI]) :- board(BL), board_blocks(BB), board_influence(BI).
 
-% make_move
-make_move([X, Y], V, [BL, BB, BI], [RL, RB, RI]) :- place_piece(X, Y, V, BL, BB, BI, RL, RB, RI).
-make_move(_, _, _, _) :- msg('error move'), fail.
+% move
+move([X, Y, V], [BL, BB, BI], [RL, RB, RI]) :- place_piece(X, Y, V, BL, BB, BI, RL, RB, RI).
+move(_, _, _, _) :- msg('error move'), fail.
 
 % check_move
 check_move(X, Y, V, BL, BB) :- 

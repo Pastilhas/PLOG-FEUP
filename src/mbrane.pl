@@ -79,4 +79,4 @@ player_turn([BL,BB,BI], P, R) :-
 	get_move(X, Y, V),
 	TV is P * V,
 	check_move(X, Y, TV, BL, BB),!,
-	make_move([X, Y], TV, [BL,BB,BI], R).
+	move([X, Y, TV], [BL,BB,BI], R).

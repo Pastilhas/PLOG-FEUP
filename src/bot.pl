@@ -33,13 +33,11 @@ check_all_cells(X, Y, B, L) :-
 
 % test_all
 test_all(I, B, R) :- test_all_cells(8, I, B, R).
-
 % test_all_cells
 test_all_cells(0, [[X,Y]], [BL,BB], [H]) :-
     check_move(X, Y, 0, BL, BB), H = [X,Y,0].
 
 test_all_cells(0, [_], _, _) :- true.
-
 test_all_cells(0, [[X,Y]|T], [BL,BB], [H|R]) :-
     check_move(X, Y, 0, BL, BB),
     H = [X,Y,0],
