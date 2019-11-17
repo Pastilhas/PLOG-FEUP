@@ -50,7 +50,7 @@ game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 	write('Play '), write(Play),nl, !,
 	player_turn([BL,BB,BI], 1, [RL|R]),!,
 	% Check complete board
-	incomplete_board(RL),
+	game_over([BL,BB,BI],W),
 	% Next play
 	NextPlay is Play + 1,
 	game_loop_2players(P1,P2,NextPlay,[RL|R]).
@@ -62,15 +62,16 @@ game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 	write('Play '), write(Play),nl, !,
 	player_turn([BL,BB,BI], -1, [RL|R]),!,
 	% Check complete board
-	incomplete_board(RL),
+	game_over([BL,BB,BI],W),
 	% Next play
 	NextPlay is Play + 1,
 	game_loop_2players(P1,P2,NextPlay,[RL|R]).
 
-% incomplete_board
-% true if board incomplete
-incomplete_board(RL) :- 
-	true.
+% game_over
+game_over([B|BI],W) :- 
+	valid_moves(B, R),
+	R = [],
+	get_winner(BI,W).
 
 % player_turn
 % get player input and make move
