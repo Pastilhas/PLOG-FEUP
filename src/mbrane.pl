@@ -164,7 +164,6 @@ player_turn([BL,BB,BI], P, R) :-
 bot_turn([BL,BB,BI], P, R) :-
 	random_move([BL,BB],X,Y,V),
 	TV is P * V,
-	write(X), write(Y), write(TV),
 	make_move([X, Y], TV, [BL,BB,BI], R).
 
 bot_turn([BL,BB,BI], P, R) :-

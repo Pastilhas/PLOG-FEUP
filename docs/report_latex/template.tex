@@ -78,8 +78,32 @@ The prolog distribution used was SicStus Prolog using a Student License.
 % TODO complete
 \section{Introduction}
 \paragraph{}
-This project was developed during the Logic Programing Course in the context of the third the Integrated Masters in Informatics 
-and Computing Engineering. The goal is to implement in Prolog a board game, in this case \textit{Mbrane}.
+This project was developed during the Logic Programing Course in the context of the third year of the Integrated Masters in Informatics 
+and Computing Engineering at FEUP. The goal was to implement the logic of a board game in Prolog, in this case \textit{Mbrane}.
+
+\paragraph{}
+Here is a short explanation of all the sections in this report:
+
+\begin{itemize}
+    \item \textbf{Game presentation:} Clarification of the most relevant aspets of the game, both it's rules and origin.
+    \begin{itemize}
+        \item \textbf{Origin:} Description the origin of the game, and it was based on the journals of the game
+        creator himself.
+        \item \textbf{Rules:} Description of all the rules of the game. 
+    \end{itemize}
+    
+    \item \textbf{Game Logic:} Description of the game logic and how it was implememted in Prolog, it focuses
+    on the most relevant predicates.
+    \begin{itemize}
+        \item \textbf{Game state representation:} Description of how all the different states of the game are represented internally in Prolog. 
+        \item \textbf{Board viewing:} Description of how we use the internal game state representation to display the game in a relatively user friendly way, using a text interface.
+        \item \textbf{List valid plays:} Description of how the we are able to determine if a play is valid or not, and more importantly, how we can find all the plays that can be made in a given moment.
+        \item \textbf{Game finalization:} Description of how we are able to detect the game is in a final state in order to determine the winner.
+        \item \textbf{Board Evaliation:} Description of how we can evaluate the board, in order to find if a given play is valid or not.
+        \item \textbf{Plays of the computer:} Description of the computer choses a move when given a list of possible moves.
+    \end{itemize}
+\end{itemize}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
@@ -178,62 +202,121 @@ The official rules can be consulted in the address: http://mbranegame.com/rules-
 \pagebreak
 \section{Game Logic}
 
-% TODO complete
+
 \subsection{Game state representation} 
 Although the user can only be able to see one board at a time, in a any phase of the game, there are actually three
-boards represented in the game’s data structures. There’s a board predicate that represents the game board itself, a
+boards represented in the game’s data structures. There’s a board predicate that represents the game \textbf{board} itself, a
 list of 9 lists each representing a line of the board. This is the board used to print the state of the game. There’s 
 also a \textbf{board\_blocks} predicate. This predicate is also a list of 9 lists, each one representing a 3 by 3 block of the 
 board, this is used to facilitate calculations involving power in each block and influence in adjacent blocks caused 
 by the placement of a number in the edge of a block. Finally we have a \textbf{board\_influence} list that stores the values of 
 power (and spread influence) in each block of the board.  When a player adds a number to cell, all the boards are 
-updated accordingly.
+updated accordingly. The predicate used to declare a fresh board is \textit{start\_board(-Board)}, which unifies a variable to a list 
+of containing the three boards mentioned above. In order to distinguish both players we determined that Player1 would place 
+positive numbers on the board, and Player2 would place negative numbers. This eases the calculations and makes it possible 
+to display to the user the which player has controll in each block of the board
+
+\begin{center}
+    \includegraphics[scale=0.3]{img/board.png}
+\end{center}
 
 
-% TODO complete
+
+
 \subsection{Board viewing} 
 Before each move, the board is displayed on the screen. To display the board we use the predicate \textit{display\_game(+Board, +Player1, +Player2)}. This predicate first displays the players' names and then uses \textit{display\_board(+Board)} to display the board itself. 
 The board is displayed line by line with a series of dividers. Although for game logic the values of the board can be positive or negative, the board is printed with only positive numbers.
+The power of all the blocks is also displayed usinf \textit{display\_power(+Power)}
 
-% TODO complete
+\begin{center}
+    \includegraphics[scale=0.3]{img/display.png}
+\end{center}
+
+
 \subsection{List valid plays} 
 As per requested, we developed a predicate that returns a list of all possible moves. This predicate is \textit{valid\_moves(+Board, -R)}. The first argument of the predicate is a list with the board of lines and board of blocks.
-This predicate works by first finding a list of all empty cells with \textit{check\_all(+Board, -List),}. Then it tests all possible values in those cells with \textit{test_all(+List, +Board, +Result)}.
+This predicate works by first finding a list of all empty cells with \textit{check\_all(+Board, -List),}. Then it tests all possible values in those cells with \textit{test\_all(+List, +Board, +Result)}.
+\textit{R} is a list of all the possible moves which are also lists in the format \textit{[X,Y,Value]}.
 
-% TODO complete
+\begin{center}
+    \includegraphics[scale=0.4]{img/test_all.png}
+\end{center}
+
+
+
 \subsection{Play execution} 
-Each player can make a move per turn \textit{player\_turn(+Board, +Player, -NewBoard)}. In this turn predicate, the program asks the player what he wants to play with \textit{get_move(-X, -Y, -V)} then the program tries that move with \textit{move(+Move, +Board, -NewBoard)}.
+Each player can make a move per turn \textit{player\_turn(+Board, +Player, -NewBoard)}. In this turn predicate, the program asks the player what he wants to play with \textit{get\_move(-X, -Y, -V)} then the program tries that move with \textit{move(+Move, +Board, -NewBoard)}.
 If the move is invalid the program repeats the previous action, otherwise, it returns a new board with the new piece.
 
+\begin{center}
+    \includegraphics[scale=0.4]{img/player_turn.png}
+\end{center}
+
+\pagebreak
+\subsection{Game finalization} 
+
+\paragraph{}
+The game is in the final state if no more numbers can be placed on the board, according to placing rule already 
+mentioned. We know this usinf the \textit{valid\_moves(+Board, -R)}. If it the Result list is empty, then no more valid
+moves can be made, which means the game is in the final state. When this happens the \textit{game\_over(+Board, -Winner)}
+predicate calculates the winner of the game.
+
+\begin{center}
+    \includegraphics[scale=0.4]{img/game_over.png}
+\end{center}
+
+\subsection{Board evaluation}
 \paragraph{}
 The number placing rules are the ones of Sudoku, so the player can only place a number if that same number is not present
 in either the column, row or 3x3 section of the square the player wants to place it. If these conditions are met, 
 the number is able to be placed.
 
-% TODO complete
-\subsection{Game finalization} 
-Verificação do fim do jogo, com identificação do vencedor. O predicado deve chamar-se \textit{game\_over(+Board, -Winner)}.
-
 \paragraph{}
-The game is in the final state if no more numbers can be placed on the board. When this happens the game enters the 
-\textbf{Resolution Phase} and proceds to make the calculartions mentioned in \textbf{Section 2}. Then the winner (if it exists) is
-announced. 
+We evaluate if a play is possible using the \textit{check\_move(+X,+Y,+Value,+BL,+BB)}, it calculates if the move is possible using 
+all the restrictions merntioned  above, if some of those restrictions are not met the predicate fails indicating the move can't be made.
 
-% TODO complete
-\subsection{Board evaluation}
-Avaliação do estado do jogo, que permitirá comparar a aplicação das diversas jogadas disponíveis. O predicado deve chamar-se \textit{value(+Board, +Player, -Value)}.
+\begin{center}
+    \includegraphics[scale=0.4]{img/check_move.png}
+\end{center}
 
 % TODO complete
 \subsection{Plays of the computer} 
-Escolha da jogada a efetuar pelo computador, dependendo do nível de dificuldade. O predicado deve chamar-se \textit{choose\_move(+Board, +Level, -Move)}.
+The computer plays only in an easy difficulty setting, this means that for each turn of the computer we get all the possible plays using 
+the \textit{valid\_moves(+Board, -R)} predicate. Then using the \textit{random/3} predicate from the SicStus random library we chose a random 
+move and execute it. The predicate that makes the move move of the computer is \textit{bot\_turn(+Board,+Power,-Result)}.
 
+\begin{center}
+    \includegraphics[scale=0.4]{img/bot_move.png}
+\end{center}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
-% TODO complete
 \section{Conclusions}
-Que conclui deste projecto? Como poderia melhorar o trabalho desenvolvido?
+
+\paragraph{}
+Overall, the project was a really good way to practice the Prolog programming language, and
+also see how it can be used to create a real application (in this case a game). In the 
+begginning we really struggled to understand the implications of the language and how 
+we could use it to build a game. The total change of paradigm from what we were used to 
+was really tough and the learning curve was a really rough one. Our start was very slow 
+and we took some time before we could start working at a decent pace.
+
+\paragraph{}
+We had a lot of trouble during the development of the project. Everything started on our first
+approach to internally store and use the game board. Only when we were trying to make 
+the game "playable" did we realize our approach was not the best one, as we were not finding a 
+way to make the game play past the second round. This required an almost total refactoring of
+the code which made us loose a lot of time. We ended up not having time to implement a more 
+difficult game mode agains the computer using a little aritifitial inteligence wich was 
+something we were looking forward to do. Due to these time issues we also ended up not implementing
+the final \textit{Resolution Phase}. We made this decision having in mind it whould not add much complexity
+to the project as it is only a bunch of calculations.
+
+\paragraph{}
+In the end of the development of the project we actually were programming at a good rythm. So 
+we find this was a positive experience, that helped us getting a better understanding 
+of declarative programming languages and logic programming.
 
 
 \clearpage

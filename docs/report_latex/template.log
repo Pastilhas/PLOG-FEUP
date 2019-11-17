@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.11.15)  17 NOV 2019 21:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.11.15)  17 NOV 2019 23:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -150,157 +150,119 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 31.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/feup-logo.png>] [2]
-No file template.toc.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/feup-logo.png>] [2] (/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 10.
+)
 \tf@toc=\write3
 \openout3 = `template.toc'.
 
-[3] [4]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 95.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 95.
-
-
-LaTeX Warning: Citation `Origin' on page 5 undefined on input line 104.
-
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 112.
-(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+ [3]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 88.
+ (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 112.
-<img/tutorial_1.png, id=22, 223.83624pt x 297.11pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 88.
+ [4]
+<img/tutorial_1.png, id=24, 223.83624pt x 297.11pt>
 File: img/tutorial_1.png Graphic file (type png)
 <use img/tutorial_1.png>
-Package pdftex.def Info: img/tutorial_1.png  used on input line 115.
+Package pdftex.def Info: img/tutorial_1.png  used on input line 139.
 (pdftex.def)             Requested size: 111.91785pt x 148.55463pt.
  [5 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_1.png>]
 <img/tutorial_2.png, id=30, 222.8325pt x 303.1325pt>
 File: img/tutorial_2.png Graphic file (type png)
 <use img/tutorial_2.png>
-Package pdftex.def Info: img/tutorial_2.png  used on input line 124.
+Package pdftex.def Info: img/tutorial_2.png  used on input line 148.
 (pdftex.def)             Requested size: 111.41597pt x 151.56587pt.
 <img/tutorial_3.png, id=31, 221.82875pt x 297.11pt>
 File: img/tutorial_3.png Graphic file (type png)
 <use img/tutorial_3.png>
-Package pdftex.def Info: img/tutorial_3.png  used on input line 132.
+Package pdftex.def Info: img/tutorial_3.png  used on input line 156.
 (pdftex.def)             Requested size: 110.9141pt x 148.55463pt.
  [6 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_2.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_3.png>]
 <img/tutorial_4.png, id=35, 223.83624pt x 303.1325pt>
 File: img/tutorial_4.png Graphic file (type png)
 <use img/tutorial_4.png>
-Package pdftex.def Info: img/tutorial_4.png  used on input line 150.
+Package pdftex.def Info: img/tutorial_4.png  used on input line 174.
 (pdftex.def)             Requested size: 111.91785pt x 151.56587pt.
 <img/tutorial_5.png, id=36, 222.8325pt x 298.11375pt>
 File: img/tutorial_5.png Graphic file (type png)
 <use img/tutorial_5.png>
-Package pdftex.def Info: img/tutorial_5.png  used on input line 158.
+Package pdftex.def Info: img/tutorial_5.png  used on input line 182.
 (pdftex.def)             Requested size: 111.41597pt x 149.0565pt.
 <img/tutorial_6.png, id=37, 227.85126pt x 302.12875pt>
 File: img/tutorial_6.png Graphic file (type png)
 <use img/tutorial_6.png>
-Package pdftex.def Info: img/tutorial_6.png  used on input line 166.
+Package pdftex.def Info: img/tutorial_6.png  used on input line 190.
 (pdftex.def)             Requested size: 113.92534pt x 151.064pt.
  [7 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_4.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_5.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/tutorial_6.png>]
-
-LaTeX Warning: Citation `Rules' on page 8 undefined on input line 175.
-
-
-Overfull \hbox (12.8895pt too wide) in paragraph at lines 175--176
+Overfull \hbox (12.8895pt too wide) in paragraph at lines 199--200
  [] \OT1/cmr/m/n/10 The of-fi-cial rules can be con-sulted in the ad-dress: http://mbranegame.com/rules-
  []
 
 [8]
-/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex:201: Missing $ inserted.
-<inserted text> 
-                $
-l.201 ...\textit{test_all(+List, +Board, +Result)}
-                                                  .
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+<img/board.png, id=45, 912.40875pt x 69.25874pt>
+File: img/board.png Graphic file (type png)
+<use img/board.png>
+Package pdftex.def Info: img/board.png  used on input line 220.
+(pdftex.def)             Requested size: 273.72473pt x 20.77777pt.
+<img/display.png, id=46, 942.52126pt x 594.22pt>
+File: img/display.png Graphic file (type png)
+<use img/display.png>
+Package pdftex.def Info: img/display.png  used on input line 232.
+(pdftex.def)             Requested size: 282.75856pt x 178.26736pt.
+ [9 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/board.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/display.png>]
+<img/test_all.png, id=50, 448.67625pt x 364.36125pt>
+File: img/test_all.png Graphic file (type png)
+<use img/test_all.png>
+Package pdftex.def Info: img/test_all.png  used on input line 242.
+(pdftex.def)             Requested size: 179.46732pt x 145.74191pt.
+<img/player_turn.png, id=51, 363.3575pt x 175.65625pt>
+File: img/player_turn.png Graphic file (type png)
+<use img/player_turn.png>
+Package pdftex.def Info: img/player_turn.png  used on input line 252.
+(pdftex.def)             Requested size: 145.34041pt x 70.26125pt.
+ [10 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/test_all.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/player_turn.png>]
+<img/game_over.png, id=55, 415.5525pt x 374.39874pt>
+File: img/game_over.png Graphic file (type png)
+<use img/game_over.png>
+Package pdftex.def Info: img/game_over.png  used on input line 265.
+(pdftex.def)             Requested size: 166.21805pt x 149.75684pt.
 
-/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex:201: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.201 ...\textit{test_all(+List, +Board, +Result)}
-                                                  .
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex:202: Missing $ inserted.
-<inserted text> 
-                $
-l.202 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (12.6593pt too wide) in paragraph at lines 200--202
-\OT1/cmr/m/n/10 Then it tests all pos-si-ble val-ues in those cells with \OT1/cmr/m/it/10 test$[]\OML/cmm/m/it/10 ll\OT1/cmr/m/n/10 (+\OML/cmm/m/it/10 List; \OT1/cmr/m/n/10 +\OML/cmm/m/it/10 Board; \OT1/cmr/m/n/10 +\OML/cmm/m/it/10 Result\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :$ 
+Overfull \hbox (18.89032pt too wide) in paragraph at lines 275--277
+ [] \OT1/cmr/m/n/10 We eval-u-ate if a play is pos-si-ble us-ing the \OT1/cmr/m/it/10 check[]move(+X,+Y,+Value,+BL,+BB)\OT1/cmr/m/n/10 ,
  []
 
-/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex:205: Missing $ inserted.
-<inserted text> 
-                $
-l.205 ...o play with \textit{get_move(-X, -Y, -V)}
-                                                   then the program tries th...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+<img/check_move.png, id=56, 644.4075pt x 136.51pt>
+File: img/check_move.png Graphic file (type png)
+<use img/check_move.png>
+Package pdftex.def Info: img/check_move.png  used on input line 279.
+(pdftex.def)             Requested size: 257.75844pt x 54.60303pt.
+<img/bot_move.png, id=57, 417.56pt x 105.39375pt>
+File: img/bot_move.png Graphic file (type png)
+<use img/bot_move.png>
+Package pdftex.def Info: img/bot_move.png  used on input line 289.
+(pdftex.def)             Requested size: 167.02103pt x 42.15674pt.
+[11 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/game_over.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/check_move.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/bot_move.png>] [12] (/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.bbl) [13
 
-/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex:205: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.205 ...o play with \textit{get_move(-X, -Y, -V)}
-                                                   then the program tries th...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex:207: Missing $ inserted.
-<inserted text> 
-                $
-l.207 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (581.3301pt too wide) in paragraph at lines 205--207
-\OT1/cmr/m/it/10 play with get$[]\OML/cmm/m/it/10 ove\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 X; \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 Y; \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 thentheprogramtriesthatmovewith[]:Ifthemoveisinvalidtheprogramrepeatsthepreviousaction; otherwise; itreturnsanewboardwiththenewpiece:$ 
- []
-
-[9] [10] [11]
-No file template.bbl.
-(/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.aux)
-
-LaTeX Warning: There were undefined references.
-
- )
-(\end occurred inside a group at level 2)
-
-### simple group (level 2) entered at line 205 ({)
-### simple group (level 1) entered at line 201 ({)
-### bottom level 
+] (/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.aux) ) 
 Here is how much of TeX's memory you used:
- 2266 strings out of 492167
- 32421 string characters out of 6131557
- 108980 words of memory out of 5000000
- 6590 multiletter control sequences out of 15000+600000
- 9206 words of font info for 32 fonts, out of 8000000 for 9000
+ 2318 strings out of 492167
+ 33692 string characters out of 6131557
+ 108016 words of memory out of 5000000
+ 6632 multiletter control sequences out of 15000+600000
+ 9015 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,7n,30p,385b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf (11 pages, 464641 bytes).
+ 46i,7n,30p,386b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf (13 pages, 621005 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 99 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
