@@ -158,6 +158,7 @@ get_winner_([H|T],P1,P2):-
 player_turn([BL,BB,BI], P, R) :- 
 	get_move(X, Y, V),
 	TV is P * V,
+	check_move(X, Y, TV, BL, BB),!,
 	move([X, Y], TV, [BL,BB,BI], R).
 
 bot_turn([BL,BB,BI], P, R) :-

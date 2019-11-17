@@ -178,8 +178,6 @@ The official rules can be consulted in the address: http://mbranegame.com/rules-
 \pagebreak
 \section{Game Logic}
 
-Descrever o projeto e implementação da lógica do jogo em Prolog, incluindo a forma de representação do estado do tabuleiro e sua visualização, execução de movimentos, verificação do cumprimento das regras do jogo, determinação do final do jogo e cálculo das jogadas a realizar pelo computador utilizando diversos níveis de jogo. Sugere-se a estruturação desta secção da seguinte forma:
-
 % TODO complete
 \subsection{Game state representation} 
 Although the user can only be able to see one board at a time, in a any phase of the game, there are actually three
@@ -194,15 +192,18 @@ updated accordingly.
 
 % TODO complete
 \subsection{Board viewing} 
-Descrever a interface com o utilizador, descrevendo a visualização do estado do jogo (pode ser idêntico ao descrito no relatório intercalar) e robustez da interface/validações de entrada.
+Before each move, the board is displayed on the screen. To display the board we use the predicate \textit{display\_game(+Board, +Player1, +Player2)}. This predicate first displays the players' names and then uses \textit{display\_board(+Board)} to display the board itself. 
+The board is displayed line by line with a series of dividers. Although for game logic the values of the board can be positive or negative, the board is printed with only positive numbers.
 
 % TODO complete
 \subsection{List valid plays} 
-Obtenção de uma lista de jogadas possíveis. O predicado deve chamar-se \textit{valid\_moves(+Board, +Player, -ListOfMoves)}.
+As per requested, we developed a predicate that returns a list of all possible moves. This predicate is \textit{valid\_moves(+Board, -R)}. The first argument of the predicate is a list with the board of lines and board of blocks.
+This predicate works by first finding a list of all empty cells with \textit{check\_all(+Board, -List),}. Then it tests all possible values in those cells with \textit{test_all(+List, +Board, +Result)}.
 
 % TODO complete
 \subsection{Play execution} 
-Validação e execução de uma jogada num tabuleiro, obtendo o novo estado do jogo. O predicado deve chamar-se \textit{move(+Move, +Board, -NewBoard)}.
+Each player can make a move per turn \textit{player\_turn(+Board, +Player, -NewBoard)}. In this turn predicate, the program asks the player what he wants to play with \textit{get_move(-X, -Y, -V)} then the program tries that move with \textit{move(+Move, +Board, -NewBoard)}.
+If the move is invalid the program repeats the previous action, otherwise, it returns a new board with the new piece.
 
 \paragraph{}
 The number placing rules are the ones of Sudoku, so the player can only place a number if that same number is not present
