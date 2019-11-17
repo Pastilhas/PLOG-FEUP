@@ -73,6 +73,19 @@ game_over([B|BI],W) :-
 	R = [],
 	get_winner(BI,W).
 
+% get_winner
+get_winner(B,W) :-
+	get_winner_(B,P1,P2),
+	(P1 > P2, W is 1); W is -1.
+
+get_winner_([],P1,P2) :- P1 is 0, P2 is 0.
+get_winner_([H|T],P1,P2):-
+	get_winner_(T,N1,N2),
+	((H > 0, P1 is N1 + 1, P2 is N2);
+		(H < 0, P1 is N1, P2 is N2 + 1)).
+	
+	
+
 % player_turn
 % get player input and make move
 player_turn([BL,BB,BI], P, R) :- 
