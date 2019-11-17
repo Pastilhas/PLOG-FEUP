@@ -4,6 +4,7 @@
  :- include('menu.pl').
  :- include('board.pl').
  :- include('display.pl').
+ :- include('bot.pl').
 
 mbrane :- main_menu(OP), repeat, mbrane(OP).
 mbrane('0') :- game, fail.
@@ -19,6 +20,7 @@ game(_) :- true.
 
 display_game(B, P1, P2) :- game_ui(P1, P2), display_board(B).
 
+% game_2players
 game_2players :- 
 	get_player(P1),
 	get_player(P2),
@@ -32,6 +34,7 @@ game_player_bot :-
 	get_player(Player),
 	display_game(BB, Player, "Bot"),
 	wait_enter.
+
 % game_2bots
 game_2bots :- 
 	board(BB),

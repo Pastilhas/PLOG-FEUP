@@ -1,5 +1,4 @@
 TODO by priority:
-1. make block restriction
-2. make random bot
-3. make not random bot
-4. make resolution phase
+    1. make random bot
+    2. make not random bot
+    3. make resolution phase
