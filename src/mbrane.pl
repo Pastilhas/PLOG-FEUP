@@ -39,7 +39,7 @@ game_player_bot :-
 % game_2bots
 game_2bots :- 
 	start_board(B),
-	game_loop_2_bots("Bot1","Bot2",0,B),
+	game_loop_2bots("Bot1","Bot2",0,B),
 	wait_enter.
 
 % game_loop_2players
@@ -51,7 +51,7 @@ game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 	write('Play '), write(Play),nl, !,
 	player_turn([BL,BB,BI], 1, [RL|R]),!,
 	% Check complete board
-	incomplete_board(RL),
+	game_over([BL,BB,BI],W),
 	% Next play
 	NextPlay is Play + 1,
 	game_loop_2players(P1,P2,NextPlay,[RL|R]).
@@ -63,7 +63,7 @@ game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 	write('Play '), write(Play),nl, !,
 	player_turn([BL,BB,BI], -1, [RL|R]),!,
 	% Check complete board
-	incomplete_board(RL),
+	game_over([BL,BB,BI],W),
 	% Next play
 	NextPlay is Play + 1,
 	game_loop_2players(P1,P2,NextPlay,[RL|R]).
@@ -128,20 +128,38 @@ game_loop_2bots(P1,P2,Play,[BL,BB,BI]) :-
 % true if board incomplete
 incomplete_board(RL) :- 
 	true.
+% game_over
+game_over([B|BI],W) :- 
+	valid_moves(B, R),
+	R = [],
+	get_winner(BI,W).
+
+% get_winner
+get_winner(B,W) :-
+	get_winner_(B,P1,P2),
+	(P1 > P2, W is 1); W is -1.
+
+get_winner_([],P1,P2) :- P1 is 0, P2 is 0.
+get_winner_([H|T],P1,P2):-
+	get_winner_(T,N1,N2),
+	((H > 0, P1 is N1 + 1, P2 is N2);
+		(H < 0, P1 is N1, P2 is N2 + 1)).
+	
+	
 
 % player_turn
 % get player input and make move
 player_turn([BL,BB,BI], P, R) :- 
-	repeat,
 	get_move(X, Y, V),
 	TV is P * V,
-	check_move(X, Y, TV, BL, BB),!,
+	move([X, Y], TV, [BL,BB,BI], R).
+
+bot_turn([BL,BB,BI], P, R) :-
+	random_move([BL,BB],X,Y,V),
+	TV is P * V,
+	write(X), write(Y), write(TV),
 	make_move([X, Y], TV, [BL,BB,BI], R).
 
 bot_turn([BL,BB,BI], P, R) :-
-	repeat,
-	random_move([BL,BB],X,Y,V),
-	TV is P * V,
-	check_move(X, Y, TV, BL, BB),!,
-	write(X), write(Y), write(TV),
-	make_move([X, Y], TV, [BL,BB,BI], R).
+	write('no more plays'),
+	true.
