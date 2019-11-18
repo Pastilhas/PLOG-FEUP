@@ -57,7 +57,7 @@ game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 		game_loop_2players(P1,P2,NextPlay,R)
 	);(
 		write('Winner is '), 
-		(W = -1, write(P2)); write(P1)
+		(W = -1, format('~s~n', [P2])); format('~s~n', [P1])
 	)).
 
 game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
@@ -73,7 +73,7 @@ game_loop_2players(P1, P2, Play, [BL,BB,BI]) :-
 		game_loop_2players(P1,P2,NextPlay,R)
 	);(
 		write('Winner is '), 
-		(W = -1, write(P2)); write(P1)
+		(W = -1, format('~s~n', [P2])); format('~s~n', [P1])
 	)).
 
 game_loop_player_bot(P1,P2,Play,[BL,BB,BI]) :-
@@ -90,7 +90,7 @@ game_loop_player_bot(P1,P2,Play,[BL,BB,BI]) :-
 		game_loop_player_bot(P1,P2,NextPlay,R)
 	);(
 		write('Winner is '), 
-		(W = -1, write(P2)); write(P1)
+		(W = -1, format('~s~n', [P2])); format('~s~n', [P1])
 	)).
 
 
@@ -107,7 +107,7 @@ game_loop_player_bot(P1,P2,Play,[BL,BB,BI]) :-
 		game_loop_player_bot(P1,P2,NextPlay,R)
 	);(
 		write('Winner is '), 
-		(W = -1, write(P2)); write(P1)
+		(W = -1, format('~s~n', [P2])); format('~s~n', [P1])
 	)).
 
 
@@ -125,7 +125,7 @@ game_loop_2bots(P1,P2,Play,[BL,BB,BI]) :-
 		game_loop_2bots(P1,P2,NextPlay,R)
 	);(
 		write('Winner is '), 
-		(W = -1, write(P2)); write(P1)
+		(W = -1, format('~s~n', [P2])); format('~s~n', [P1])
 	)).
 
 game_loop_2bots(P1,P2,Play,[BL,BB,BI]) :-
@@ -141,7 +141,7 @@ game_loop_2bots(P1,P2,Play,[BL,BB,BI]) :-
 		game_loop_2bots(P1,P2,NextPlay,R)
 	);(
 		write('Winner is '), 
-		(W = -1, write(P2)); write(P1)
+		(W = -1, format('~s~n', [P2])); format('~s~n', [P1])
 	)).
 
 
