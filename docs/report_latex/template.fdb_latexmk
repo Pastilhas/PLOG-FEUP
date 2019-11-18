@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex template"] 1574034570 "template.aux" "template.bbl" "template" 1574034571
+["bibtex template"] 1574035472 "template.aux" "template.bbl" "template" 1574035577
   "/usr/share/texmf-dist/bibtex/bst/base/apalike.bst" 1572595918 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "myrefs.bib" 1573666160 553 c2b8d02e88efd18137c0f7dcb1b9146d ""
-  "template.aux" 1574034571 2970 a8889a8beaf6399ba81f9505b2bc0d87 "pdflatex"
+  "template.aux" 1574035577 2860 e86815f4e2c296aeffce0a2bea542f0e "pdflatex"
   (generated)
   "template.bbl"
   "template.blg"
-["pdflatex"] 1574034570 "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf" "template" 1574034571
-  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.aux" 1574034571 2970 a8889a8beaf6399ba81f9505b2bc0d87 ""
-  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" 1574034568 17191 e2701705dba1adacdc9a7046b88046e3 ""
+["pdflatex"] 1574035576 "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf" "template" 1574035577
+  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.aux" 1574035577 2860 e86815f4e2c296aeffce0a2bea542f0e ""
+  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" 1574035576 16172 a883e2efcfe36dafa8f3bff70395905b ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1572595918 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1572595918 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1572595918 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -74,7 +74,7 @@
   "img/check_move.png" 1574033507 20048 de3036afad006b6de2072cb1317bbc13 ""
   "img/display.png" 1574033209 76101 198f8f092c871d84de25670a2c2074b4 ""
   "img/game_over.png" 1574034279 37362 3f40164a4f40290b23196a46f41b7eda ""
-  "img/player_turn.png" 1574033457 21992 1d79780d6aa3a1721e1266e24a1d31ec ""
+  "img/player_turn.png" 1574035524 23125 9f1faa250d19545b80c6f4c322a17f9a ""
   "img/test_all.png" 1574033342 31659 4a432491df0c7eb5aceb96602af83ed2 ""
   "img/tutorial_1.png" 1573663530 61708 f0f1486d372d5ee71062d64db5575567 ""
   "img/tutorial_2.png" 1573664664 46819 fd7001611e526bfe8448b5e2dbb3135d ""
@@ -82,14 +82,14 @@
   "img/tutorial_4.png" 1573664954 41692 3b727600c44c560a7f13bc47118681bf ""
   "img/tutorial_5.png" 1573665024 46505 e232cfd3aab51be6890b2e7102264ca4 ""
   "img/tutorial_6.png" 1573665095 42618 138b1224b4e5ae21aa0b5dc3fc6d57f9 ""
-  "template.aux" 1574034571 2970 a8889a8beaf6399ba81f9505b2bc0d87 "pdflatex"
-  "template.bbl" 1574034570 411 d318888fcd184e1f6df8701b0b0ced59 "bibtex template"
-  "template.tex" 1574034568 17191 e2701705dba1adacdc9a7046b88046e3 ""
-  "template.toc" 1574034571 1568 64d09760da8ed3416254a8731ff8b13a "pdflatex"
+  "template.aux" 1574035577 2860 e86815f4e2c296aeffce0a2bea542f0e "pdflatex"
+  "template.bbl" 1574035472 411 d318888fcd184e1f6df8701b0b0ced59 "bibtex template"
+  "template.tex" 1574035576 16172 a883e2efcfe36dafa8f3bff70395905b ""
+  "template.toc" 1574035577 1498 b00b182879004cb17842179ce8ea0294 "pdflatex"
   (generated)
-  "template.toc"
-  "template.aux"
-  "template.log"
   "template.pdf"
   "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf"
   "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.log"
+  "template.aux"
+  "template.log"
+  "template.toc"

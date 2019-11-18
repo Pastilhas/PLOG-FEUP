@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.11.15)  17 NOV 2019 23:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.11.15)  18 NOV 2019 00:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -208,52 +208,46 @@ Overfull \hbox (12.8895pt too wide) in paragraph at lines 195--196
 <img/board.png, id=45, 912.40875pt x 69.25874pt>
 File: img/board.png Graphic file (type png)
 <use img/board.png>
-Package pdftex.def Info: img/board.png  used on input line 219.
+Package pdftex.def Info: img/board.png  used on input line 215.
 (pdftex.def)             Requested size: 273.72473pt x 20.77777pt.
 <img/display.png, id=46, 942.52126pt x 594.22pt>
 File: img/display.png Graphic file (type png)
 <use img/display.png>
-Package pdftex.def Info: img/display.png  used on input line 231.
+Package pdftex.def Info: img/display.png  used on input line 227.
 (pdftex.def)             Requested size: 282.75856pt x 178.26736pt.
  [9 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/board.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/display.png>]
 <img/test_all.png, id=50, 448.67625pt x 364.36125pt>
 File: img/test_all.png Graphic file (type png)
 <use img/test_all.png>
-Package pdftex.def Info: img/test_all.png  used on input line 241.
+Package pdftex.def Info: img/test_all.png  used on input line 237.
 (pdftex.def)             Requested size: 179.46732pt x 145.74191pt.
-<img/player_turn.png, id=51, 363.3575pt x 175.65625pt>
+<img/player_turn.png, id=51, 363.3575pt x 192.72pt>
 File: img/player_turn.png Graphic file (type png)
 <use img/player_turn.png>
-Package pdftex.def Info: img/player_turn.png  used on input line 251.
-(pdftex.def)             Requested size: 145.34041pt x 70.26125pt.
+Package pdftex.def Info: img/player_turn.png  used on input line 247.
+(pdftex.def)             Requested size: 145.34041pt x 77.08662pt.
  [10 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/test_all.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/player_turn.png>]
 <img/game_over.png, id=55, 415.5525pt x 374.39874pt>
 File: img/game_over.png Graphic file (type png)
 <use img/game_over.png>
-Package pdftex.def Info: img/game_over.png  used on input line 264.
+Package pdftex.def Info: img/game_over.png  used on input line 260.
 (pdftex.def)             Requested size: 166.21805pt x 149.75684pt.
 
-Overfull \hbox (18.89032pt too wide) in paragraph at lines 275--278
+Overfull \hbox (18.89032pt too wide) in paragraph at lines 270--272
  [] \OT1/cmr/m/n/10 We eval-u-ate if a play is pos-si-ble us-ing the \OT1/cmr/m/it/10 check[]move(+X,+Y,+Value,+BL,+BB)\OT1/cmr/m/n/10 ,
- []
-
-
-Overfull \hbox (23.14713pt too wide) in paragraph at lines 279--282
-\OT1/cmr/m/it/10 get[]winner(+Board, -Winner)\OT1/cmr/m/n/10 . >>>>>>> 889e61c990fc3b6be83a5a63602e5d1bce5fdd98 
  []
 
 <img/check_move.png, id=56, 644.4075pt x 136.51pt>
 File: img/check_move.png Graphic file (type png)
 <use img/check_move.png>
-Package pdftex.def Info: img/check_move.png  used on input line 284.
+Package pdftex.def Info: img/check_move.png  used on input line 274.
 (pdftex.def)             Requested size: 257.75844pt x 54.60303pt.
-[11 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/game_over.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/check_move.png>]
-<img/bot_move.png, id=60, 417.56pt x 105.39375pt>
+<img/bot_move.png, id=57, 417.56pt x 105.39375pt>
 File: img/bot_move.png Graphic file (type png)
 <use img/bot_move.png>
-Package pdftex.def Info: img/bot_move.png  used on input line 294.
+Package pdftex.def Info: img/bot_move.png  used on input line 284.
 (pdftex.def)             Requested size: 167.02103pt x 42.15674pt.
- [12 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/bot_move.png>] [13] (/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.bbl) [14
+[11 </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/game_over.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/check_move.png> </home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/img/bot_move.png>] [12] (/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.bbl) [13
 
 ] (/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.aux) ) 
 Here is how much of TeX's memory you used:
@@ -265,10 +259,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  46i,7n,30p,386b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf (14 pages, 622475 bytes).
+Output written on /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf (13 pages, 621464 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 99 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

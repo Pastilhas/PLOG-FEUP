@@ -198,12 +198,8 @@ The official rules can be consulted in the address: http://mbranegame.com/rules-
 \pagebreak
 \section{Game Logic}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 889e61c990fc3b6be83a5a63602e5d1bce5fdd98
 \subsection{Game state representation} 
-Although the user can only be able to see one board at a time, in a any phase of the game, there are actually three
+Although the user can only see one board at a time, in a any phase of the game, there are actually three
 boards represented in the game’s data structures. There’s a board predicate that represents the game \textbf{board} itself, a
 list of 9 lists each representing a line of the board. This is the board used to print the state of the game. There’s 
 also a \textbf{board\_blocks} predicate. This predicate is also a list of 9 lists, each one representing a 3 by 3 block of the 
@@ -225,7 +221,7 @@ to display to the user the which player has controll in each block of the board
 \subsection{Board viewing} 
 Before each move, the board is displayed on the screen. To display the board we use the predicate \textit{display\_game(+Board, +Player1, +Player2)}. This predicate first displays the players' names and then uses \textit{display\_board(+Board)} to display the board itself. 
 The board is displayed line by line with a series of dividers. Although for game logic the values of the board can be positive or negative, the board is printed with only positive numbers.
-The power of all the blocks is also displayed usinf \textit{display\_power(+Power)}
+The power of all the blocks is also displayed using\textit{display\_power(+Power)}
 
 \begin{center}
     \includegraphics[scale=0.3]{img/display.png}
@@ -256,7 +252,7 @@ If the move is invalid the program repeats the previous action, otherwise, it re
 
 \paragraph{}
 The game is in the final state if no more numbers can be placed on the board, according to placing rule already 
-mentioned. We know this usinf the \textit{valid\_moves(+Board, -R)}. If it the Result list is empty, then no more valid
+mentioned. We know this using the \textit{valid\_moves(+Board, -R)}. If the Result list is empty, then no more valid
 moves can be made, which means the game is in the final state. When this happens the \textit{game\_over(+Board, -Winner)}
 predicate calculates the winner of the game.
 
@@ -270,15 +266,9 @@ The number placing rules are the ones of Sudoku, so the player can only place a 
 in either the column, row or 3x3 section of the square the player wants to place it. If these conditions are met, 
 the number is able to be placed.
 
-<<<<<<< HEAD
 \paragraph{}
 We evaluate if a play is possible using the \textit{check\_move(+X,+Y,+Value,+BL,+BB)}, it calculates if the move is possible using 
 all the restrictions merntioned  above, if some of those restrictions are not met the predicate fails indicating the move can't be made.
-=======
-\subsection{Game finalization} 
-For the end of game we need to verify if there are any possible moves left. This is done by predicate \textit{game\_over(+Board, -Winner)}. If there are any moves left, it fails and the game continues.
-Otherwise it will find out who won the game. This is done by verifying which player controls the most blocks in the predicate \textit{get\_winner(+Board, -Winner)}.
->>>>>>> 889e61c990fc3b6be83a5a63602e5d1bce5fdd98
 
 \begin{center}
     \includegraphics[scale=0.4]{img/check_move.png}
@@ -298,7 +288,6 @@ move and execute it. The predicate that makes the move move of the computer is \
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 \section{Conclusions}
-<<<<<<< HEAD
 
 \paragraph{}
 Overall, the project was a really good way to practice the Prolog programming language, and
@@ -323,11 +312,6 @@ to the project as it is only a bunch of calculations.
 In the end of the development of the project we actually were programming at a good rythm. So 
 we find this was a positive experience, that helped us getting a better understanding 
 of declarative programming languages and logic programming.
-=======
-With this work we have developed our way of thinking in a new way. Although Prolog can be compared to other programming languages, it is unique in the way it works.
-The biggest problem we found was trying to make use of dynamic predicates to create a sort of global board. After testing a lot we decided to give up on the idea.
-In terms of the game mechanics, there are a lot of verifications 
->>>>>>> 889e61c990fc3b6be83a5a63602e5d1bce5fdd98
 
 
 \clearpage
