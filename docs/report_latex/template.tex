@@ -277,7 +277,7 @@ all the restrictions merntioned  above, if some of those restrictions are not me
 % TODO complete
 \subsection{Plays of the computer} 
 The computer plays only in an easy difficulty setting, this means that for each turn of the computer we get all the possible plays using 
-the \textit{valid\_moves(+Board, -R)} predicate. Then using the \textit{random/3} predicate from the SicStus random library we chose a random 
+the \textit{valid\_moves(+Board, -R)} predicate. Then using the \textit{random/3} predicate from the SicStus random library, we choose a random 
 move and execute it. The predicate that makes the move move of the computer is \textit{bot\_turn(+Board,+Power,-Result)}.
 
 \begin{center}
@@ -303,10 +303,10 @@ approach to internally store and use the game board. Only when we were trying to
 the game "playable" did we realize our approach was not the best one, as we were not finding a 
 way to make the game play past the second round. This required an almost total refactoring of
 the code which made us loose a lot of time. We ended up not having time to implement a more 
-difficult game mode agains the computer using a little aritifitial inteligence wich was 
+difficult game mode agains the computer using a little aritifitial inteligence which was 
 something we were looking forward to do. Due to these time issues we also ended up not implementing
-the final \textit{Resolution Phase}. We made this decision having in mind it whould not add much complexity
-to the project as it is only a bunch of calculations.
+the final \textit{Resolution Phase}. We made this decision having in mind it whould not add much
+ complexity to the project as it would only involve some calculations using already existing preicates.
 
 \paragraph{}
 In the end of the development of the project we actually were programming at a good rythm. So 

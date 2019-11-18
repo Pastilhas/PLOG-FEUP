@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex template"] 1574035472 "template.aux" "template.bbl" "template" 1574035577
+["bibtex template"] 1574035472 "template.aux" "template.bbl" "template" 1574035845
   "/usr/share/texmf-dist/bibtex/bst/base/apalike.bst" 1572595918 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "myrefs.bib" 1573666160 553 c2b8d02e88efd18137c0f7dcb1b9146d ""
-  "template.aux" 1574035577 2860 e86815f4e2c296aeffce0a2bea542f0e "pdflatex"
+  "template.aux" 1574035845 2860 e86815f4e2c296aeffce0a2bea542f0e "pdflatex"
   (generated)
-  "template.bbl"
   "template.blg"
-["pdflatex"] 1574035576 "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf" "template" 1574035577
-  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.aux" 1574035577 2860 e86815f4e2c296aeffce0a2bea542f0e ""
-  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" 1574035576 16172 a883e2efcfe36dafa8f3bff70395905b ""
+  "template.bbl"
+["pdflatex"] 1574035844 "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf" "template" 1574035845
+  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.aux" 1574035845 2860 e86815f4e2c296aeffce0a2bea542f0e ""
+  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.tex" 1574035844 16214 8413620861791a2d18f6061b37a45af0 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1572595918 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1572595918 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1572595918 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -82,14 +82,14 @@
   "img/tutorial_4.png" 1573664954 41692 3b727600c44c560a7f13bc47118681bf ""
   "img/tutorial_5.png" 1573665024 46505 e232cfd3aab51be6890b2e7102264ca4 ""
   "img/tutorial_6.png" 1573665095 42618 138b1224b4e5ae21aa0b5dc3fc6d57f9 ""
-  "template.aux" 1574035577 2860 e86815f4e2c296aeffce0a2bea542f0e "pdflatex"
+  "template.aux" 1574035845 2860 e86815f4e2c296aeffce0a2bea542f0e "pdflatex"
   "template.bbl" 1574035472 411 d318888fcd184e1f6df8701b0b0ced59 "bibtex template"
-  "template.tex" 1574035576 16172 a883e2efcfe36dafa8f3bff70395905b ""
-  "template.toc" 1574035577 1498 b00b182879004cb17842179ce8ea0294 "pdflatex"
+  "template.tex" 1574035844 16214 8413620861791a2d18f6061b37a45af0 ""
+  "template.toc" 1574035845 1498 b00b182879004cb17842179ce8ea0294 "pdflatex"
   (generated)
+  "template.toc"
   "template.pdf"
-  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf"
   "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.log"
+  "/home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/docs/report_latex/template.pdf"
   "template.aux"
   "template.log"
-  "template.toc"
