@@ -9,6 +9,7 @@
  */
 
 :-use_module(library(clpfd)).
+:-include('display.pl').
 
 %	gap(+Side, -Out)
 %	generate solutions for the gap puzzle
