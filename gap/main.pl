@@ -25,30 +25,28 @@ gap(S, Points) :-
 
 	%restrict the coordinates
 	domain(Points, 0, Max),
-	write('0 to '),write(Max),nl,
 	restrict(Points),
 
 	% find solution
-	labeling([], Points),
-	print_coords(Points).
+	labeling([], Points).
 
 %	restrict(+Points)
 %	restrict all points
 restrict(Points) :-
-	write('Start restrict'),nl,write(Points),nl,
+	write('Start restrict'),nl,
 	restrict(Points, 0, [], [], []).
 
-%	restrict(+Points, N, prevX, occX, occY)
+%	restrict(+Points, N, PrevX, OccX, OccY)
 %	restrict all points. 
 % N is number of line, 
-% prevX is list of invalid X (cells will touch), 
-% occX is list of occupied X, occY is list of occupied Y
-restrict([X1,Y1,X2,Y2,X3,Y3,X4,Y4 | R], N, prevX, occX, occY) :-
+% PrevX is list of invalid X (cells will touch), 
+% OccX is list of occupied X, OccY is list of occupied Y
+restrict([X1,Y1,X2,Y2,X3,Y3,X4,Y4 | R], N, PrevX, OccX, OccY) :-
 	% if N was already used -> jump to next
-	count_duplicate(occY,N,I)												,
+	count_duplicate(OccY,N,I)												,
 	I = 0																						,
 	% restrict X
-	all_distinct([X1,X3|prevX])											,
+	all_distinct([X1,X3|PrevX])											,
 	X3 #> X1 + 1																		,
 	% restrict P1 and P2
 	X1 #= X2																				, 
@@ -59,41 +57,39 @@ restrict([X1,Y1,X2,Y2,X3,Y3,X4,Y4 | R], N, prevX, occX, occY) :-
 	Y3 #= N 																				, 
 	Y4 #> Y3 + 1																		,
 	% prepare next iteration
-	append([Y1,Y2,Y3,Y4],occY,newOccY)							,
-	append([X1,X3],occX,newOccX)										,
+	append([Y1,Y2,Y3,Y4],OccY,NewOccY)							,
+	append([X1,X3],OccX,NewOccX)										,
 	BX1 #= X1 - 1																		, 
 	AX1 #= X1 + 1																		, 
 	BX3 #= X3 - 1																		, 
 	AX3 #= X3 + 1																		, 
 	NN is N + 1																			,
-	% restrict rest of Points, prevX are all that would touch in next line
-	% occX is X1 and X3 appended to the previous
-	% occY is twice N, Y2 and Y4 appended to the previous
-	restrict(R, NN, [BX1,X1,AX1,BX3,X3,AX3], newOccX, newOccY).
+	% restrict rest of Points, PrevX are all that would touch in next line
+	% OccX is X1 and X3 appended to the previous
+	% OccY is twice N, Y2 and Y4 appended to the previous
+	restrict(R, NN, [BX1,X1,AX1,BX3,X3,AX3], NewOccX, NewOccY).
 
-restrict([X1,Y1 | R], N, prevX, occX, occY) :-
+restrict([X1,Y1 | R], N, PrevX, OccX, OccY) :-
 	% if N was used twice -> jump to next
-	count_duplicate(occY,N,I),
+	count_duplicate(OccY,N,I),
 	I = 1,
 	% restrict X
-	all_distinct([X1|prevX]),
+	all_distinct([X1|PrevX]),
 	% restrict P1 and P2
 	X1 #= X2, Y1 #= N, Y2 #> Y1 + 1,
 	% prepare next iteration
-	append([Y1,Y2],occY,newOccY),
-	append([X1],occX,newOccX),
+	append([Y1,Y2],OccY,NewOccY),
+	append([X1],OccX,NewOccX),
 	BX1 #= X1 - 1, AX1 #= X1 + 1,
 	NN is N + 1,
-	% restrict rest of Points, prevX are all that would touch in next line
-	% occX is X1 and X3 appended to the previous
-	% occY is twice N, Y2 and Y4 appended to the previous
-	restrict(R, NN, [BX1,X1,AX1,BX3,X3,AX3], newOccX, newOccY).
-
-restrict(_, _, _, _, _) :- write('error'),nl.
+	% restrict rest of Points, PrevX are all that would touch in next line
+	% OccX is X1 and X3 appended to the previous
+	% OccY is twice N, Y2 and Y4 appended to the previous
+	restrict(R, NN, [BX1,X1,AX1,BX3,X3,AX3], NewOccX, NewOccY).
 
 count_duplicate([], _, 0).
-count_duplicate([E|T], E, NI) :- NI is I + 1, count_duplicate(T,Elem,I).
-count_duplicate([H|T], E, I) :- count_duplicate(T,Elem,I).
+count_duplicate([E|T], E, NI) :- count_duplicate(T,E,I), NI is I + 1.
+count_duplicate([H|T], E, I) :- count_duplicate(T,E,I).
 
 %	print(+Points)
 %	print puzzle using coordinates
