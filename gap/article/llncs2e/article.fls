@@ -69,10 +69,16 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
 INPUT /usr/share/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/share/texmf-dist/tex/latex/base/omscmr.fd
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 OUTPUT /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/gap/article/llncs2e/article.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/gap/article/llncs2e/images/figure1.png
+INPUT /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/gap/article/llncs2e/images/figure1.png
+INPUT /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/gap/article/llncs2e/images/figure1.png
+INPUT /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/gap/article/llncs2e/images/fig2.png
+INPUT /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/gap/article/llncs2e/images/fig2.png
+INPUT /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/gap/article/llncs2e/images/fig2.png
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
 INPUT /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/gap/article/llncs2e/fig1.eps
 INPUT /home/thol/Documentos/MIEIC/3ano/1semestre/PLOG/PLOG-FEUP/gap/article/llncs2e/fig1.eps
@@ -93,6 +99,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb
