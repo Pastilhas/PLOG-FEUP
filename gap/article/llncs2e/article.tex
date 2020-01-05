@@ -8,7 +8,7 @@
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
 %
-% If you use the hyperref package, please uncomment the following line
+% If you use the hyperref package, please uncomment the following line1
 % to display URLs in blue roman font according to Springer's eBook style:
 % \renewcommand\UrlFont{\color{blue}\rmfamily}
 
@@ -42,19 +42,18 @@ Logical Programing Course, Class 3MIEIC03, Group Gap Puzzle\_5}
 %
 \begin{abstract}
 This project was developed during the the Logical Programing Course in the context of the year
-of the Integrated Masters in in Informatics and Computing Engineering at The Faculty of Engineering
+of the Integrated Masters in Informatics and Computing Engineering at The Faculty of Engineering
 of the University of Porto. The goal was to solve a problem using the Prolog programming language,
 more specifically, using Constraint Logic Programming over Finite Domains (clpfd) library, that's defined
-in the SICStus Prolog distribution. 
+in the SICStus Prolog distribution.
 In the specific case of our team, the problem in question is the Gap Puzzle, which is defined in detail in
 \textbf{Section 2}.
 In order to solve the problem, Prolog constraint programming was used. This type of programming grants us the
 advantage of fast computation, requiring a somewhat simple and little verbosed kind of programming. Using constraints,
-we can simply define all the constraints of our problem (in the case of puzzles these are the rules of the puzzle), 
-which in the case of more complex problems is not trivial. Then, after defining the solution search algorithm, 
+we can simply define all the constraints of our problem (in the case of puzzles these are the rules of the puzzle),
+which in the case of more complex problems is not trivial. Then, after defining the solution search algorithm,
 the clpfd library will search for solutions.
-\textbf{CONCLUSÕES}
-    
+
 
 \keywords{Prolog  \and Constraint Programing \and Gap Puzzle.}
 \end{abstract}
@@ -63,23 +62,23 @@ the clpfd library will search for solutions.
 
 \section{Introduction}
 \paragraph{}
-This goal of the project was to elaborate a Prolog program that, given a board order, computes all the solutions of the 
-Gap Puzzle for that board order. 
-Optimization is a relevant factor here. Different ways of defining constraints can lead us to the same set of 
-solutions, but computation times can vary greatly. So, one of the concerns during the development of this project 
-was to find solutions as fast as possible. 
+This goal of the project was to elaborate a Prolog program that, given a board order, computes all the solutions of the
+Gap Puzzle for that board order.
+Optimization is a relevant factor here. Different ways of defining constraints can lead us to the same set of
+solutions, but computation times can vary greatly. So, one of the concerns during the development of this project
+was to find solutions as fast as possible.
 
 \paragraph{}
 Bellow we shortly explain the following sections of this article.
 
 \begin{itemize}
     \item \textbf{Problem Description:} Detailed description of the problem we are solving and the rules of Gap Puzzles
-    
-    \item \textbf{Approach:} 
+
+    \item \textbf{Approach}
     \begin{itemize}
-        \item \textbf{Decision Variables:} 
-        \item \textbf{Constraints:}
-        \item \textbf{Search Strategy:} 
+        \item \textbf{Decision Variables}
+        \item \textbf{Constraints}
+        \item \textbf{Search Strategy}
     \end{itemize}
 
     \item \textbf{Solution Presentation:} Description of how solutions are presented in an intelligible way.
@@ -88,12 +87,12 @@ Bellow we shortly explain the following sections of this article.
 \end{itemize}
 
 \section{Problem Description}
-The problem in question is the solution is the solution of the Gap Puzzle. Gap is a very simple puzzle, yet a challenging
-one. We have grid of arbitrary size and our goal, is to shade two squares of the grid in every row and column, such that 
+The problem in question is the solution of the Gap Puzzle. Gap is a very simple puzzle, yet a challenging
+one. We have grid of arbitrary size and our goal, is to shade two squares of the grid in every row and column, such that
 two shaded squares do not touch, even at the corners. Because there is more than one solution for every grid order,
 in the puzzle form of the problem, there are numbers on the side of the grid to indicate the number of non shaded squares
 there must exist between two shaded squares in that row or column. The figure below illustrates an example of puzzle with
-order 5.
+order 9.
 
 \begin{figure}
     \begin{center}
@@ -101,27 +100,26 @@ order 5.
         \caption{Gap Puzzle example} \label{fig1}
     \end{center}
 \end{figure}
-    
+
 \paragraph{}
-Although they are very interesting, these specific puzzles do not interest us. We are interested in finding arbitrary 
+Although they are very interesting, these specific puzzles do not interest us. We are interested in finding arbitrary
 solutions for a problem with a given order.
 
 \pagebreak
 
 \section{Approach}
 \paragraph{}
-In the specific context of this problem, the constraints used to solve the problem are a translation of the rules of 
+In the specific context of this problem, the constraints used to solve the problem are a translation of the rules of
 the puzzle to Prolog Constraints. The following subsections explain the constraints used in detail.
 
 \subsection{Decision Variables}
 To solve this problem we have only a decision variable, the \textit{Points} list. This list stores the coordinates of all
-the cells that will be shaded, in the format \textit{[X1,Y1,X2,Y2|...]}. We start by defining that this list will have a 
+the cells that will be shaded, in the format \textit{[X1,Y1,X2,Y2|...]}. We start by defining that this list will have a
 a length of:
 
 \begin{equation}
     points = 2 * order
 \end{equation}
-
 \begin{equation}
     length = 4 * order
 \end{equation}
@@ -130,16 +128,16 @@ This happens because we can only have two shaded cells in each row. Since the nu
 grid, we a number of points that is two times our order.
 
 \paragraph{}
-Then we define the domain of the Decision Variable, this will between zero and the number immediately inferior to our order,
+Then we define the domain of the decision variable, which is between zero and the number immediately inferior to our order,
 this is because we are considering a system of coordinates starting in zero.
 
 \subsection{Constraints}
 \paragraph{}
-The first constraint we make is to grant there are only two shaded cells in each row and in each column. We do this 
-using the \textbf{restrict\_two(+List,+Order)} predicate. This predicate restricts each number of the domain in the list 
+The first constraint we make is to ensure there are only two shaded cells in each row and in each column. We do this
+using the \textbf{restrict\_two(+List,+Order)} predicate. This predicate restricts each number of the domain in the list
 to occur exactly two times in the list. We do this two times, the first for a list containing all the X coordinates of the
 solution, and a second time for the Y coordinate. We are able to split this using the \textbf{extractX(+List,-XList)} and
-\textbf{extractY(+List,-YList)} predicates. The first one takes a list with the solution format and unifies in 
+\textbf{extractY(+List,-YList)} predicates. The first one takes a list with the solution format and unifies in
 \textit{XList} all the X coordinates of that list. The \textit{extractY} predicate does the same for Y.
 
 \begin{figure}
@@ -151,9 +149,9 @@ solution, and a second time for the Y coordinate. We are able to split this usin
 
 \paragraph{}
 Then we restrict the positions of the shaded cells themselves. We do this using the \textbf{restrict\_next(+List)} predicate.
-This predicate iterates through the list making sure that no other coordinates in the list are the coordinates of an 
+This predicate iterates through the list making sure that no other coordinates in the list are the coordinates of an
 adjacent cell to the any of the other cells and that no two cell coordinates are the same. This predicate calls the
-\textbf{restrict\_next\_pair(+List,+X,+Y)} predicate that applies the constraints mentioned above to all the other 
+\textbf{restrict\_next\_pair(+List,+X,+Y)} predicate that applies the constraints mentioned above to all the other
 coordinate pairs in the list.
 
 \begin{figure}
@@ -165,8 +163,8 @@ coordinate pairs in the list.
 
 \section{Search Strategy}
 \paragraph{}
-So that prolog can search for arbitrary solutions and not different permutations of the same solution, we need to define
-a predicate that makes each solution unique. In the present case, this was accomplished by ordering all the points 
+To ensure that prolog only searches for different solutions and not different permutations of the same solution, we need to define
+a predicate that makes each solution unique. In the present case, this was accomplished by ordering all the points
 of a solution in a crescent order, making each solution unique. This is accomplished by the \textbf{crescent\_order(+List)}
 predicate.
 
@@ -180,46 +178,78 @@ predicate.
 
 \section{Solution Presentation}
 \paragraph{}
-For solution presentation there the \textbf{display\_gap(+Sol,+Len)} was elaborated. This predicate receives the \textit{Sol}
-list, which is a prolog list containing the coordinates of all grid cells to be shaded for that solution, and \textit{Len},
-which is the length of a row, that is, the order of the board the solution given applies to. In order to do this, this 
-predicate uses the three predicates explained bellow.
+For solution presentation we elaborated \textbf{display\_gap(+Sol,+Len)}. This predicate receives the \textit{Points}
+list, with the format previously explained, and \textit{Order}, which is the order of the board the solution given applies to.
+This predicate then uses the three predicates explained bellow.
 
 \paragraph{}
-This predicate uses the \textbf{empty\_board(-B,+Len)} which creates a list of lists representing an empty grid, with order \textit{Len},
-this new grid is then unified with \textit{B}. This predicate works by appending new atoms, representing an empty cell (\textbf{' '}, 
-a single space character) to an empty starting list. Once this list has the desired length, this list is then replicated 
+Firstly it uses \textbf{empty\_board(-B,+Len)} predicate which creates a list of lists representing an empty grid, with order \textit{Len},
+this new grid is then unified with \textit{B}.
+This predicate works by appending new atoms, representing an empty cell (\textbf{\textquotesingle \textquotesingle},
+a single space character) to an empty starting list. Once this list has the desired length, this list is then replicated
 several times to form a new empty grid.
 
 \paragraph{}
 Then, we use the \textbf{process\_board(+Board,+Sol,-NewBoard)} to substitute all the empty cells in the positions given
-by solution list, with the \textbf{'X'} atom. This represents a shaded cell. In order to make the substitution we defined
-the \textbf{replaceN(+List,+N,+NewElem,Res)} predicate. This predicate substitutes the element of order \textit{N} in 
-\textit{List} to the element \textit{NewElem}, then unifies the resulting list with \textit{NewBoard}.
+by solution list, with the \textbf{\textquotesingle X \textquotesingle} atom.
+This represents a shaded cell. In order to make the substitution we defined
+the \textbf{replaceN(+List,+N,+NewElem,-Res)} predicate. This predicate substitutes the element of order \textit{N} in
+\textit{List} to the element \textit{NewElem}, then unifies the resulting list with \textit{Res}.
 
 \paragraph{}
 Finally, the predicate \textbf{display\_board(+Board)} was defined to display the board \textit{Board}. This predicate
 writes the separators in the screen and then displays each row of the grid, using the right format. Bellow, we can see a
 displayed board.
-    
+
 \begin{figure}
     \begin{center}
         \includegraphics[scale=0.5]{images/fig2.png}
         \caption{Solution Display Example} \label{fig2}
     \end{center}
 \end{figure}
-    
+
 
 \section{Results}
+Our program finds one solution for every order given. Given this, we tested it with all possible numbers from 1 to 30.
+By doing this we discovered that the puzzle only has solutions with orders 9 and above. Here are two examples.
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.5]{images/gap9.jpg}
+        \caption{Solution Example} \label{fig3}
+    \end{center}
+    \begin{center}
+        \includegraphics[scale=0.5]{images/gap11.jpg}
+        \caption{Solution Example} \label{fig4}
+    \end{center}
+\end{figure}
+After making multiple tries per order we ended up with this graph. It shows the amount of time taken by the program for
+each order.
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.5]{images/graph.png}
+        \caption{Times Graph} \label{fig5}
+    \end{center}
+\end{figure}
+From the graph you can see a pattern where the program takes exponentially more time to solve the puzzle. But then it
+reaches a point where there is a drop in that time. This pattern repeats itself after its first instance and probably forever, as you increase order.
 
 
 \section{Conclusions and Future Work}
+We think we have achieved what was proposed to us at the start of this project. With this work we were able to learn how to think in a different way.
+Since we use other paradigms of programming more frequently, when using prolog with restrictions we could not think of a solution to the problem as quickly as normal.
+As previously said, the gap puzzle is a challenging one, but with the use of restrictions, we can find solutions in little time.
+\paragraph{}
+From the results we can conclude that our proposed solution is not perfect. How is it possible for such a big time difference from one solution to another?
+And why are there bigger boards with considerably smaller times then smaller boards?
+\paragraph{}
+We could say one advantage to our solution is the fact that it finds one and only one solution per board size. This means it loses less time evaluating several solutions.
+Although this feature can also be seen as a limitation, since we can only get one solution and miss the other ones.
 
 
 \begin{thebibliography}{8}
     \bibitem{ref_url}
-    Erich Friedman's Puzzle Palace - Gap Puzzles, Copyright Erich Friedman, 2010. 
-    \url{https://www2.stetson.edu/~efriedma/puzzle/gap/}. 
+    Erich Friedman's Puzzle Palace - Gap Puzzles, Copyright Erich Friedman, 2010.
+    \url{https://www2.stetson.edu/~efriedma/puzzle/gap/}.
     Last accessed 4 Jan 2020
     \end{thebibliography}
 

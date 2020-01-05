@@ -10,6 +10,7 @@
 
 :-use_module(library(lists)).
 :-use_module(library(clpfd)).
+:-use_module(library(statistics)).
 :-include('display.pl').
 
 restrict_two(Sol,0) :- count(0,Sol,#=,2).
@@ -73,6 +74,7 @@ crescent_order([H1,H2|T]) :-
 
 
 gap(S,Points) :-
+  statistics(walltime, [Start,_]),
 	Max is 4 * S,
 	Dom is S -1,
 
@@ -88,12 +90,12 @@ gap(S,Points) :-
 	restrict_two(YList,Dom),
 
 	restrict_next(Points),
-
-	write(labeling), nl,
-
 	labeling([],Points),
-	display_gap(Points,S).
-	
+  statistics(walltime, [End,_]),
+	display_gap(Points,S),
+        
+  Time is End - Start,
+	format('finished ~3d seconds.~n', [Time]).
 
  
 %	gap(+Side, -Out)
