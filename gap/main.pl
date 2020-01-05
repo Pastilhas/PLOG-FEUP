@@ -72,7 +72,7 @@ crescent_order([H1,H2|T]) :-
 	crescent_order([H2|T]).
 
 
-gap_(S,Points) :-
+gap(S,Points) :-
 	Max is 4 * S,
 	Dom is S -1,
 
