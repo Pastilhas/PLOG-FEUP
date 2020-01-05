@@ -1,0 +1,4 @@
+PWD d:\Desktop\escolinha\plog\PLOG-FEUP\gap\article
+INPUT C:\Users\joaoc\AppData\Local\MiKTeX\2.9\miktex\data\le\pdftex\pdflatex.fmt
+INPUT d:\Desktop\escolinha\plog\PLOG-FEUP\gap\article\article.tex
+OUTPUT d:\Desktop\escolinha\plog\PLOG-FEUP\gap\article\article.log

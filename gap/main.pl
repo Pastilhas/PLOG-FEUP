@@ -14,9 +14,12 @@
 :-include('display.pl').
 :-include('auxiliar.pl').
 
+% gap/2
+% gap(+S, -Points).
+% find a solution to gap puzzle with order S
 gap(S,Points) :-
 	S < 15,
-  statistics(walltime, [Start,_]),
+  	statistics(walltime, [Start,_]),
 	Max is 4 * S,
 	Dom is S -1,
 
@@ -37,12 +40,12 @@ gap(S,Points) :-
 	statistics(walltime, [End,_]),
 
 	display_gap(Points,S),
-  Time is End - Start,
+  	Time is End - Start,
 	format('finished in ~3d seconds.~n', [Time]).
 
 gap(S,Points) :-
 	S >= 15,
-  statistics(walltime, [Start,_]),
+  	statistics(walltime, [Start,_]),
 	Max is 4 * S,
 	Dom is S -1,
 
@@ -61,5 +64,5 @@ gap(S,Points) :-
 	statistics(walltime, [End,_]),
 
 	display_gap(Points,S),
-  Time is End - Start,
+  	Time is End - Start,
 	format('finished in ~3d seconds.~n', [Time]).
