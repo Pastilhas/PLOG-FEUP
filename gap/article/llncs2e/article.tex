@@ -222,8 +222,8 @@ displayed board.
 
 \section{Results}
 \paragraph{}
-Our program finds one solution for every order given. Given this, we tested it with all possible numbers from 1 to 30.
-By doing this we discovered that the puzzle only has solutions with orders 9 and above. Here is one example of one board with order 11.
+Our program finds a solution given a valid number above 0. Given this, we tested it with all possible numbers from 1 to 30.
+By doing this we discovered that the puzzle only has solutions for orders 9 and above. Here is one example of one board with order 11.
 
 \begin{figure}
     \begin{center}
@@ -241,21 +241,29 @@ reaches a point where there is a drop in that time. This pattern repeats itself 
 
 \begin{figure}
     \begin{center}
-        \includegraphics[scale=0.5]{images/graph.png}
-        \caption{Times graph} \label{fig5}
+        \includegraphics[scale=0.38]{images/graph.png}
+        \caption{Times graph order/time(s)} \label{fig5}
     \end{center}
 \end{figure}
 
 \paragraph{}
 This irregular behaviour told us the solution was imperfect somewhere. With that knowledge, we felt incentivized to search new ways of labeling variables.
-We then found we could add a random function to the labeling and once we implemented it, it showed incredible results. After more testing, we reached the conclusion
-that the best way to search for solutions in smaller boards was to use \textbf{crescent\_order(+List)}, but to bigger boards it was a waste of time. With this in mind,
-we added a condition where if the board was of order 14 or below, it would use \textbf{crescent\_order(+List)}, but bigger boards it would not.
+Before we only ordered the values of the coordinates before labeling.
+We then found we could add a random function to the labeling and once we implemented it, it showed incredible results.
 
 \begin{figure}
     \begin{center}
         \includegraphics[scale=0.5]{images/graph2.png}
-        \caption{Times graph after random labeling} \label{fig5}
+        \caption{Times graph after random labeling order/time(s)} \label{fig5}
+    \end{center}
+\end{figure}
+After more testing, we reached the conclusion
+that the best way to search for solutions in smaller boards was to use \textbf{crescent\_order(+List)}, but to bigger boards it wasted too much time. With this in mind,
+we added a condition where if the board was of order 14 or below, it would use \textbf{crescent\_order(+List)}, but bigger boards it would not.
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.3]{images/graph3.png}
+        \caption{Times graph after random labeling and condition for bigger boards \newline order/time(s)} \label{fig5}
     \end{center}
 \end{figure}
 
@@ -269,14 +277,18 @@ Since we use other paradigms of programming more frequently, when using prolog w
 As previously said, the gap puzzle is a challenging one, but with the use of restrictions, we can find solutions in little time.
 One significant thing we learned was that a change that might seem simple, as adding a random function, might increase efficiency by many times.
 \paragraph{}
-From the results we can conclude that our program is quite efficient and that is one of its advantages. But this is at the cost of certainty, since you only get random
-solutions, maybe not the one you are looking for.
+From the results we can conclude that our program is quite efficient and that is one of its advantages.
 
 \begin{thebibliography}{8}
     \bibitem{ref_url}
     Erich Friedman's Puzzle Palace - Gap Puzzles, Copyright Erich Friedman, 2010.
     \url{https://www2.stetson.edu/~efriedma/puzzle/gap/}.
     Last accessed 4 Jan 2020
-    \end{thebibliography}
+\end{thebibliography}
+
+\appendix
+\section{\\Annex}
+\paragraph{}
+Within the zip this article came in, are present the source code files for the project and images and data used for this article.
 
 \end{document}
