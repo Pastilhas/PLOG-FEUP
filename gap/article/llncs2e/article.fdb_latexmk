@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1578247218 "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.pdf" "article" 1578247218
+["pdflatex"] 1578247300 "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.pdf" "article" 1578247300
   "C:/Users/joaoc/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1578242451 3757968 a1d48328febae3b638bf58f4a1b61724 ""
   "C:/Users/joaoc/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1578242942 77580 0902bf85dfadfdef13ad4bb0cb98be38 ""
   "D:/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -41,9 +41,9 @@
   "D:/MiKTeX 2.9/tex/latex/oberdiek/aliascnt.sty" 1577803646 2652 813491e2bc95c1dafbb39cd7c54b380b ""
   "D:/MiKTeX 2.9/tex/latex/tools/multicol.sty" 1573424844 31158 cae2ad811c8e8846a5be16c9984d4859 ""
   "article.aux" 0 -1 0 "pdflatex"
-  "article.tex" 1578247216 12251 5089d732680d8963753af9190d8e137f ""
-  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.aux" 1578247218 9 a94a2480d3289e625eea47cd1b285758 ""
-  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" 1578247216 12251 5089d732680d8963753af9190d8e137f ""
+  "article.tex" 1578247298 12279 86c1f3be5a3d7c3a68ca8416f92bcc96 ""
+  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.aux" 1578247300 9 a94a2480d3289e625eea47cd1b285758 ""
+  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" 1578247298 12279 86c1f3be5a3d7c3a68ca8416f92bcc96 ""
   "images/crescent.png" 1578232189 26178 802b81e171d95b9c2c34109940322c6f ""
   "images/fig2.png" 1578173018 139549 a05d01895a9f3c655155606b92fcfc7e ""
   "images/figure1.png" 1578173018 1835 44215507e8d7bf25b4363de07336f826 ""
@@ -55,7 +55,7 @@
   "llncs.cls" 1578148261 43467 b08ec23e994470d7d8fc268d245cf555 ""
   (generated)
   "article.aux"
-  "article.pdf"
   "article.log"
   "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.log"
+  "article.pdf"
   "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.pdf"
