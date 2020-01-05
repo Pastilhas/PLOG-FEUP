@@ -96,22 +96,86 @@ there must exist between two shaded squares in that row or column. The figure be
 order 5.
 
 \begin{figure}
-\includegraphics[width=\textwidth]{images/figure1.png}
-\caption{Gap Puzzle example} \label{fig1}
+    \begin{center}
+        \includegraphics[scale=0.5]{images/figure1.png}
+        \caption{Gap Puzzle example} \label{fig1}
+    \end{center}
 \end{figure}
     
 \paragraph{}
 Although they are very interesting, these specific puzzles do not interest us. We are interested in finding arbitrary 
 solutions for a problem with a given order.
 
+\pagebreak
 
 \section{Approach}
+\paragraph{}
+In the specific context of this problem, the constraints used to solve the problem are a translation of the rules of 
+the puzzle to Prolog Constraints. The following subsections explain the constraints used in detail.
 
 \subsection{Decision Variables}
+To solve this problem we have only a decision variable, the \textit{Points} list. This list stores the coordinates of all
+the cells that will be shaded, in the format \textit{[X1,Y1,X2,Y2|...]}. We start by defining that this list will have a 
+a length of:
+
+\begin{equation}
+    points = 2 * order
+\end{equation}
+
+\begin{equation}
+    length = 4 * order
+\end{equation}
+
+This happens because we can only have two shaded cells in each row. Since the number of rows is equal to the order of our
+grid, we a number of points that is two times our order.
+
+\paragraph{}
+Then we define the domain of the Decision Variable, this will between zero and the number immediately inferior to our order,
+this is because we are considering a system of coordinates starting in zero.
 
 \subsection{Constraints}
+\paragraph{}
+The first constraint we make is to grant there are only two shaded cells in each row and in each column. We do this 
+using the \textbf{restrict\_two(+List,+Order)} predicate. This predicate restricts each number of the domain in the list 
+to occur exactly two times in the list. We do this two times, the first for a list containing all the X coordinates of the
+solution, and a second time for the Y coordinate. We are able to split this using the \textbf{extractX(+List,-XList)} and
+\textbf{extractY(+List,-YList)} predicates. The first one takes a list with the solution format and unifies in 
+\textit{XList} all the X coordinates of that list. The \textit{extractY} predicate does the same for Y.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.5]{images/restrict_two.png}
+        \caption{The restrict\_two predicate} \label{fig2}
+    \end{center}
+\end{figure}
+
+\paragraph{}
+Then we restrict the positions of the shaded cells themselves. We do this using the \textbf{restrict\_next(+List)} predicate.
+This predicate iterates through the list making sure that no other coordinates in the list are the coordinates of an 
+adjacent cell to the any of the other cells and that no two cell coordinates are the same. This predicate calls the
+\textbf{restrict\_next\_pair(+List,+X,+Y)} predicate that applies the constraints mentioned above to all the other 
+coordinate pairs in the list.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.5]{images/restrictPair.png}
+        \caption{The restrict\_next\_pair predicate} \label{fig3}
+    \end{center}
+\end{figure}
 
 \section{Search Strategy}
+\paragraph{}
+So that prolog can search for arbitrary solutions and not different permutations of the same solution, we need to define
+a predicate that makes each solution unique. In the present case, this was accomplished by ordering all the points 
+of a solution in a crescent order, making each solution unique. This is accomplished by the \textbf{crescent\_order(+List)}
+predicate.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.5]{images/crescent.png}
+        \caption{The crescent\_order predicate} \label{fig4}
+    \end{center}
+\end{figure}
 
 
 \section{Solution Presentation}
