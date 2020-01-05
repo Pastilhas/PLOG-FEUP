@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1578246732 "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.pdf" "article" 1578246732
+["pdflatex"] 1578247218 "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.pdf" "article" 1578247218
   "C:/Users/joaoc/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1578242451 3757968 a1d48328febae3b638bf58f4a1b61724 ""
   "C:/Users/joaoc/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1578242942 77580 0902bf85dfadfdef13ad4bb0cb98be38 ""
   "D:/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -13,7 +13,6 @@
   "D:/MiKTeX 2.9/fonts/tfm/public/cm/cmsy6.tfm" 1136765053 1116 933a60c408fc0a863a92debe84b2d294 ""
   "D:/MiKTeX 2.9/fonts/tfm/public/cm/cmsy9.tfm" 1136765053 1116 25a7bf822c58caf309a702ef79f4afbb ""
   "D:/MiKTeX 2.9/fonts/tfm/public/cm/cmti10.tfm" 1136765053 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "D:/MiKTeX 2.9/fonts/tfm/public/cm/cmti9.tfm" 1136765053 1476 cccc6cc4935c18ec3d5623b77ecb8b74 ""
   "D:/MiKTeX 2.9/fonts/tfm/public/cm/cmtt9.tfm" 1136765053 764 c98a2af25c99b73a368cf7336e255190 ""
   "D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247593066 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247593066 32080 340ef9bf63678554ee606688e7b5339d ""
@@ -27,7 +26,6 @@
   "D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247593067 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb" 1247593066 32442 c975af247b6702f7ca0c299af3616b80 ""
   "D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247593067 37944 359e864bd06cde3b1cf57bb20757fb06 ""
-  "D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb" 1247593067 36310 f5ddc6715cc60deb16d9db5ded6a9391 ""
   "D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb" 1247593067 29078 718ea4567ceff944262b0f5b0800e1d9 ""
   "D:/MiKTeX 2.9/tex/context/base/mkii/supp-pdf.mkii" 1550860920 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "D:/MiKTeX 2.9/tex/latex/base/article.cls" 1573424404 19931 ac2a201ee7969e5fc885f1f0445b10c6 ""
@@ -43,10 +41,9 @@
   "D:/MiKTeX 2.9/tex/latex/oberdiek/aliascnt.sty" 1577803646 2652 813491e2bc95c1dafbb39cd7c54b380b ""
   "D:/MiKTeX 2.9/tex/latex/tools/multicol.sty" 1573424844 31158 cae2ad811c8e8846a5be16c9984d4859 ""
   "article.aux" 0 -1 0 "pdflatex"
-  "article.tex" 1578246729 16120 59520cb6ecd590b5f69b4a0d8aaffa65 ""
-  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.aux" 1578246732 9 a94a2480d3289e625eea47cd1b285758 ""
-  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" 1578246729 16120 59520cb6ecd590b5f69b4a0d8aaffa65 ""
-  "fig1.eps" 1578148261 357553 7e2b7e710693198613c8426973a2c3ce ""
+  "article.tex" 1578247216 12251 5089d732680d8963753af9190d8e137f ""
+  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.aux" 1578247218 9 a94a2480d3289e625eea47cd1b285758 ""
+  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" 1578247216 12251 5089d732680d8963753af9190d8e137f ""
   "images/crescent.png" 1578232189 26178 802b81e171d95b9c2c34109940322c6f ""
   "images/fig2.png" 1578173018 139549 a05d01895a9f3c655155606b92fcfc7e ""
   "images/figure1.png" 1578173018 1835 44215507e8d7bf25b4363de07336f826 ""
@@ -57,8 +54,8 @@
   "images/restrict_two.png" 1578232189 20060 cb508fd3230edb146f388d1efb1b4813 ""
   "llncs.cls" 1578148261 43467 b08ec23e994470d7d8fc268d245cf555 ""
   (generated)
-  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.log"
   "article.aux"
-  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.pdf"
-  "article.log"
   "article.pdf"
+  "article.log"
+  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.log"
+  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.pdf"
