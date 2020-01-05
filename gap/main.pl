@@ -85,7 +85,7 @@ gap(S,Points) :-
 	extractX(Points,XList),
 	extractY(Points,YList),
 
-	%crescent_order(Points),
+	((S < 15, crescent_order(Points));true),
 
 	restrict_two(XList,Dom),
 	restrict_two(YList,Dom),

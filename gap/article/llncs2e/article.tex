@@ -163,14 +163,25 @@ coordinate pairs in the list.
 
 \subsection{Search Strategy}
 \paragraph{}
-Initially, we opted to use an ordering function to order the coordinates. This way, we would only get one solution and not
-permutations of the same solution. Later, while doing timed tests, we noticed irregularities. To combat these, we found
-a new way to search solutions, a random function. After adding this function to our project and removing the precious
-ordering one, we noticed great improvement in our tests.
+For labeling we made an ordering function in \textbf{crescent\_order(+B)} predicate. This predicate orders the coordinates of the points
+top-down and left-right, improving the labeling times for smaller boards.
 
 \begin{figure}
     \begin{center}
-        \includegraphics[scale=0.4]{images/random.png}
+        \includegraphics[scale=0.5]{images/crescent.png}
+        \caption{Crescent ordering} \label{fig4}
+    \end{center}
+\end{figure}
+
+\paragraph{}
+For bigger boards, \textbf{crescent\_order(+B)} predicate is an expensive task, as it runs through the whole list of points to apply the restrictions.
+For this reason, if the board is of order 15 or bigger, this predicate is not used.
+\paragraph{}
+We also added a random function that was given in the classes. This function allows \textbf{labeling} predicate to select the value in a random way.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.5]{images/random.png}
         \caption{Random selection predicate} \label{fig4}
     \end{center}
 \end{figure}
@@ -238,15 +249,16 @@ reaches a point where there is a drop in that time. This pattern repeats itself 
 
 \paragraph{}
 This irregular behaviour told us the solution was imperfect somewhere. With that knowledge, we felt incentivized to search new ways of labeling variables.
-We then found we could add a random function to the labeling and once we implemented it, it showed incredible results.
+We then found we could add a random function to the labeling and once we implemented it, it showed incredible results. After more testing, we reached the conclusion
+that the best way to search for solutions in smaller boards was to use \textbf{crescent\_order(+B)}, but to bigger boards it was a waste of time. With this in mind,
+we added a condition where if the board was of order 14 or below, it would use \textbf{crescent\_order(+B)}.
 
 \begin{figure}
     \begin{center}
-        \includegraphics[scale=0.6]{images/graph2.png}
+        \includegraphics[scale=0.5]{images/graph2.png}
         \caption{Times graph after random labeling} \label{fig5}
     \end{center}
 \end{figure}
-
 
 
 

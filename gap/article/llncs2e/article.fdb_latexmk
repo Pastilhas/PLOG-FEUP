@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1578253304 "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.pdf" "article" 1578253305
+["pdflatex"] 1578255957 "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.pdf" "article" 1578255958
   "C:/Users/joaoc/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1578242451 3757968 a1d48328febae3b638bf58f4a1b61724 ""
   "C:/Users/joaoc/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1578242942 77580 0902bf85dfadfdef13ad4bb0cb98be38 ""
   "D:/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -40,10 +40,11 @@
   "D:/MiKTeX 2.9/tex/latex/graphics/trig.sty" 1573400876 4093 f6c84526d8a14dceb492f9a764e82175 ""
   "D:/MiKTeX 2.9/tex/latex/oberdiek/aliascnt.sty" 1577803646 2652 813491e2bc95c1dafbb39cd7c54b380b ""
   "D:/MiKTeX 2.9/tex/latex/tools/multicol.sty" 1573424844 31158 cae2ad811c8e8846a5be16c9984d4859 ""
-  "article.aux" 1578253304 3851 39a5e6289c73d7778dbfa00691d4943e "pdflatex"
-  "article.tex" 1578253303 12575 e489a457fbb8a3b5d00f3a01c1e2f593 ""
-  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.aux" 1578253304 3851 39a5e6289c73d7778dbfa00691d4943e ""
-  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" 1578253303 12575 e489a457fbb8a3b5d00f3a01c1e2f593 ""
+  "article.aux" 1578255958 4141 0b551db674bcf69c437c6149dc840196 "pdflatex"
+  "article.tex" 1578255956 13281 2c441d629f7ca63b20244f976630abe5 ""
+  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.aux" 1578255958 4141 0b551db674bcf69c437c6149dc840196 ""
+  "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.tex" 1578255956 13281 2c441d629f7ca63b20244f976630abe5 ""
+  "images/crescent.png" 1578232189 26178 802b81e171d95b9c2c34109940322c6f ""
   "images/fig2.png" 1578173018 139549 a05d01895a9f3c655155606b92fcfc7e ""
   "images/figure1.png" 1578173018 1835 44215507e8d7bf25b4363de07336f826 ""
   "images/gap11.jpg" 1578237611 51392 6cfd1a7329d87f532f7ebda40121b187 ""
@@ -57,6 +58,6 @@
   (generated)
   "article.pdf"
   "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.log"
+  "article.log"
   "article.aux"
   "d:/Desktop/escolinha/plog/PLOG-FEUP/gap/article/llncs2e/article.pdf"
-  "article.log"
