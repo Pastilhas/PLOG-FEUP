@@ -75,28 +75,41 @@ crescent_order([H1,H2|T]) :-
 
 
 gap(S,Points) :-
+	S < 15,
   statistics(walltime, [Start,_]),
 	Max is 4 * S,
 	Dom is S -1,
-
 	length(Points,Max),
 	domain(Points,0,Dom),
-
 	extractX(Points,XList),
 	extractY(Points,YList),
-
-	((S < 15, crescent_order(Points));true),
-
+	crescent_order(Points),
 	restrict_two(XList,Dom),
 	restrict_two(YList,Dom),
-
 	restrict_next(Points),
 	labeling([value(selRandom)],Points),
   statistics(walltime, [End,_]),
 	display_gap(Points,S),
-
   Time is End - Start,
-	format('finished ~3d seconds.~n', [Time]).
+	format('finished in ~3d seconds.~n', [Time]).
+
+gap(S,Points) :-
+	S >= 15,
+  statistics(walltime, [Start,_]),
+	Max is 4 * S,
+	Dom is S -1,
+	length(Points,Max),
+	domain(Points,0,Dom),
+	extractX(Points,XList),
+	extractY(Points,YList),
+	restrict_two(XList,Dom),
+	restrict_two(YList,Dom),
+	restrict_next(Points),
+	labeling([value(selRandom)],Points),
+  statistics(walltime, [End,_]),
+	display_gap(Points,S),
+  Time is End - Start,
+	format('finished in ~3d seconds.~n', [Time]).
 
 selRandom(Var, Rest, BB0, BB1):- % seleciona valor de forma aleatória
    fd_set(Var, Set), fdset_to_list(Set, List),

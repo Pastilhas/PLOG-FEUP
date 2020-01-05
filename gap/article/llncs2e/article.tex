@@ -163,18 +163,18 @@ coordinate pairs in the list.
 
 \subsection{Search Strategy}
 \paragraph{}
-For labeling we made an ordering function in \textbf{crescent\_order(+B)} predicate. This predicate orders the coordinates of the points
-top-down and left-right, improving the labeling times for smaller boards.
+For labeling we made an ordering function in \textbf{crescent\_order(+List)} predicate. This predicate orders the coordinates of the points
+down-top and right-left, improving the labeling times for smaller boards.
 
 \begin{figure}
     \begin{center}
         \includegraphics[scale=0.5]{images/crescent.png}
-        \caption{Crescent ordering} \label{fig4}
+        \caption{Point ordering} \label{fig4}
     \end{center}
 \end{figure}
 
 \paragraph{}
-For bigger boards, \textbf{crescent\_order(+B)} predicate is an expensive task, as it runs through the whole list of points to apply the restrictions.
+For bigger boards, \textbf{crescent\_order(+List)} predicate is an expensive task, as it runs through the whole list of points to apply the restrictions.
 For this reason, if the board is of order 15 or bigger, this predicate is not used.
 \paragraph{}
 We also added a random function that was given in the classes. This function allows \textbf{labeling} predicate to select the value in a random way.
@@ -218,31 +218,30 @@ displayed board.
     \end{center}
 \end{figure}
 
+\newpage
 
 \section{Results}
 \paragraph{}
 Our program finds one solution for every order given. Given this, we tested it with all possible numbers from 1 to 30.
-By doing this we discovered that the puzzle only has solutions with orders 9 and above. Here are two examples.
+By doing this we discovered that the puzzle only has solutions with orders 9 and above. Here is one example of one board with order 11.
 
 \begin{figure}
     \begin{center}
         \includegraphics[scale=0.35]{images/gap9.jpg}
         \caption{Solution Example} \label{fig3}
     \end{center}
-    \begin{center}
-        \includegraphics[scale=0.5]{images/gap11.jpg}
-        \caption{Solution Example} \label{fig4}
-    \end{center}
 \end{figure}
 
+\pagebreak
+
 \paragraph{}
-After making multiple tries per order we ended up with this graph. It shows the amount of time taken by the program for
+After making multiple tries per order we ended up with this graph. It shows the amount of time (in seconds) taken by the program for
 each order. From the graph you can see a pattern where the program takes exponentially more time to solve the puzzle. But then it
 reaches a point where there is a drop in that time. This pattern repeats itself after its first instance and probably forever, as you increase order.
 
 \begin{figure}
     \begin{center}
-        \includegraphics[scale=0.6]{images/graph.png}
+        \includegraphics[scale=0.5]{images/graph.png}
         \caption{Times graph} \label{fig5}
     \end{center}
 \end{figure}
@@ -250,8 +249,8 @@ reaches a point where there is a drop in that time. This pattern repeats itself 
 \paragraph{}
 This irregular behaviour told us the solution was imperfect somewhere. With that knowledge, we felt incentivized to search new ways of labeling variables.
 We then found we could add a random function to the labeling and once we implemented it, it showed incredible results. After more testing, we reached the conclusion
-that the best way to search for solutions in smaller boards was to use \textbf{crescent\_order(+B)}, but to bigger boards it was a waste of time. With this in mind,
-we added a condition where if the board was of order 14 or below, it would use \textbf{crescent\_order(+B)}.
+that the best way to search for solutions in smaller boards was to use \textbf{crescent\_order(+List)}, but to bigger boards it was a waste of time. With this in mind,
+we added a condition where if the board was of order 14 or below, it would use \textbf{crescent\_order(+List)}, but bigger boards it would not.
 
 \begin{figure}
     \begin{center}
@@ -261,7 +260,7 @@ we added a condition where if the board was of order 14 or below, it would use \
 \end{figure}
 
 
-
+\pagebreak
 \section{Conclusions and Future Work}
 \paragraph{}
 We think we have achieved what was proposed to us at the start of this project. With this work we were able to learn how to think in a different way.
