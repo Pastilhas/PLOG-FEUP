@@ -11,6 +11,7 @@
 :-use_module(library(lists)).
 :-use_module(library(clpfd)).
 :-use_module(library(statistics)).
+:-use_module(library(random)).
 :-include('display.pl').
 
 restrict_two(Sol,0) :- count(0,Sol,#=,2).
@@ -64,12 +65,12 @@ extractY(List,Pairs) :-
 crescent_order([_,_]).
 
 crescent_order([X1,Y1,X2,Y2|T]) :-
-	X1 #>= X2, 
+	X1 #>= X2,
 	#\((X1 #= X2) #<=> (Y1 #> Y2)),
 	crescent_order([X2,Y2|T]).
 
 crescent_order([H1,H2|T]) :-
-	H1 #>= H2, 
+	H1 #>= H2,
 	crescent_order([H2|T]).
 
 
@@ -84,71 +85,21 @@ gap(S,Points) :-
 	extractX(Points,XList),
 	extractY(Points,YList),
 
-	crescent_order(Points),
+	%crescent_order(Points),
 
 	restrict_two(XList,Dom),
 	restrict_two(YList,Dom),
 
 	restrict_next(Points),
-	labeling([],Points),
+	labeling([value(selRandom)],Points),
   statistics(walltime, [End,_]),
 	display_gap(Points,S),
-        
+
   Time is End - Start,
 	format('finished ~3d seconds.~n', [Time]).
 
- 
-%	gap(+Side, -Out)
-%	generate solutions for the gap puzzle
-%	solutions come in the form of coordinates for black cells
-% gap(S, Points) :-
-% 	number(S),								% check S is number
-
-% 	% get list of coordinates
-% 	Max is S - 1,
-% 	length(Left, S),
-% 	length(Right, S),
-% 	length(Up, S),
-% 	length(Down, S),
-
-% 	domain(Left, 0, Max),
-% 	domain(Right, 0, Max),
-% 	domain(Up, 0, Max),
-% 	domain(Down, 0, Max),
-
-% 	all_distinct(Left),
-% 	all_distinct(Right),
-% 	all_distinct(Up),
-% 	all_distinct(Down),
-
-% 	restrict(Left, Right, Up, Down, Points),
-% 	nl,nl,write(Points),nl,nl,
-
-% 	% find solution
-% 	labeling([], Points),
-% 	display_gap(Points,S).
-
-% %	restrict(+Points)
-% %	restrict all points
-% restrict([], [], [], [], []) :- write('start').
-% restrict([L|RL], [R|RR], [U|RU], [D1,D2|RD], Points) :-
-% 	nl,write(L),write(R),write(U),write(D),nl,
-% 	restrict(RL, RR, RU, RD, NPoints),
-% 	R #> L + 1,
-% 	D #> U + 1,
-% 	domain([X,Z], 0, 9),
-% 	X #> U + 1,
-% 	Z #> U + 1,
-% 	append([L,U, R,U, L,X, R,Z],NPoints,Points).
-% restrict(_, _, _, _, []) :- write('start').
-
-%	print(+Points)
-%	print puzzle using coordinates
-print_coords([]) :- true.
-print_coords([X1,Y1,X2,_|R]) :-
-	write('line '), write(Y1), write(': '), write(X1), write(' | '), write(X2),
-	nl, print_coords(R).
-
-print_points([]).
-print_points([X|T]) :-
-	write(X) ,nl, print_points(T).
+selRandom(Var, Rest, BB0, BB1):- % seleciona valor de forma aleatória
+   fd_set(Var, Set), fdset_to_list(Set, List),
+   random_member(Value, List), % da library(random)
+   ( first_bound(BB0, BB1), Var #= Value ;
+   later_bound(BB0, BB1), Var #\= Value ).

@@ -161,20 +161,19 @@ coordinate pairs in the list.
     \end{center}
 \end{figure}
 
-\section{Search Strategy}
+\subsection{Search Strategy}
 \paragraph{}
-To ensure that prolog only searches for different solutions and not different permutations of the same solution, we need to define
-a predicate that makes each solution unique. In the present case, this was accomplished by ordering all the points
-of a solution in a crescent order, making each solution unique. This is accomplished by the \textbf{crescent\_order(+List)}
-predicate.
+Initially, we opted to use an ordering function to order the coordinates. This way, we would only get one solution and not
+permutations of the same solution. Later, while doing timed tests, we noticed irregularities. To combat these, we found
+a new way to search solutions, a random function. After adding this function to our project and removing the precious
+ordering one, we noticed great improvement in our tests.
 
 \begin{figure}
     \begin{center}
-        \includegraphics[scale=0.5]{images/crescent.png}
-        \caption{The crescent\_order predicate} \label{fig4}
+        \includegraphics[scale=0.4]{images/random.png}
+        \caption{Random selection predicate} \label{fig4}
     \end{center}
 \end{figure}
-
 
 \section{Solution Presentation}
 \paragraph{}
@@ -185,13 +184,13 @@ This predicate then uses the three predicates explained bellow.
 \paragraph{}
 Firstly it uses \textbf{empty\_board(-B,+Len)} predicate which creates a list of lists representing an empty grid, with order \textit{Len},
 this new grid is then unified with \textit{B}.
-This predicate works by appending new atoms, representing an empty cell (\textbf{\textquotesingle \textquotesingle},
+This predicate works by appending new atoms, representing an empty cell (\textbf{' '},
 a single space character) to an empty starting list. Once this list has the desired length, this list is then replicated
 several times to form a new empty grid.
 
 \paragraph{}
 Then, we use the \textbf{process\_board(+Board,+Sol,-NewBoard)} to substitute all the empty cells in the positions given
-by solution list, with the \textbf{\textquotesingle X \textquotesingle} atom.
+by solution list, with the \textbf{' X '} atom.
 This represents a shaded cell. In order to make the substitution we defined
 the \textbf{replaceN(+List,+N,+NewElem,-Res)} predicate. This predicate substitutes the element of order \textit{N} in
 \textit{List} to the element \textit{NewElem}, then unifies the resulting list with \textit{Res}.
@@ -216,7 +215,7 @@ By doing this we discovered that the puzzle only has solutions with orders 9 and
 
 \begin{figure}
     \begin{center}
-        \includegraphics[scale=0.5]{images/gap9.jpg}
+        \includegraphics[scale=0.35]{images/gap9.jpg}
         \caption{Solution Example} \label{fig3}
     \end{center}
     \begin{center}
@@ -233,22 +232,34 @@ reaches a point where there is a drop in that time. This pattern repeats itself 
 \begin{figure}
     \begin{center}
         \includegraphics[scale=0.6]{images/graph.png}
-        \caption{Times Graph} \label{fig5}
+        \caption{Times graph} \label{fig5}
     \end{center}
 \end{figure}
+
+\paragraph{}
+This irregular behaviour told us the solution was imperfect somewhere. With that knowledge, we felt incentivized to search new ways of labeling variables.
+We then found we could add a random function to the labeling and once we implemented it, it showed incredible results.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.6]{images/graph2.png}
+        \caption{Times graph after random labeling} \label{fig5}
+    \end{center}
+\end{figure}
+
+
+
 
 \section{Conclusions and Future Work}
 \paragraph{}
 We think we have achieved what was proposed to us at the start of this project. With this work we were able to learn how to think in a different way.
 Since we use other paradigms of programming more frequently, when using prolog with restrictions we could not think of a solution to the problem as quickly as normal.
+\paragraph{}
 As previously said, the gap puzzle is a challenging one, but with the use of restrictions, we can find solutions in little time.
+One significant thing we learned was that a change that might seem simple, as adding a random function, might increase efficiency by many times.
 \paragraph{}
-From the results we can conclude that our proposed solution is not perfect. How is it possible for such a big time difference from one solution to another?
-And why are there bigger boards with considerably smaller times then smaller boards?
-\paragraph{}
-We could say one advantage to our solution is the fact that it finds one and only one solution per board size. This means it loses less time evaluating several solutions.
-Although this feature can also be seen as a limitation, since we can only get one solution and miss the other ones.
-
+From the results we can conclude that our program is quite efficient and that is one of its advantages. But this is at the cost of certainty, since you only get random
+solutions, maybe not the one you are looking for.
 
 \begin{thebibliography}{8}
     \bibitem{ref_url}
